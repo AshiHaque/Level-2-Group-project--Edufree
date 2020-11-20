@@ -15,4 +15,4 @@ const Home = () => {
   );
 };
 
-export default index;
+export default Home;

@@ -23,7 +23,7 @@ const Navbar = () => {
             Forum
           </NavLink>
           <NavLink to="/Sign-in" activeStyle>
-            Sign up //testing
+            Sign up
           </NavLink>
         </NavMenu>
         <NavBtn>
