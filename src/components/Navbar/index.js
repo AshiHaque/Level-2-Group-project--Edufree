@@ -3,13 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, NavDropdown, Nav, Form, FormControl, Button} from 'react-bootstrap';
 
 
-
 function index() {
   return (
     <div className="Index">
       
-
-  
 
 
 <Navbar bg="primary" variant = "dark" expand="lg">

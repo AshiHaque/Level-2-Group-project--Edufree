@@ -6,7 +6,7 @@ import Home from "./Pages";
 function App() {
   return (
     <Router>
-      <Navbar /> <Registration />
+      <Navbar /> 
       <Switch>
         <Route path="/" exact component={Home} />
       </Switch>
