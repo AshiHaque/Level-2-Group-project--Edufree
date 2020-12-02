@@ -1,0 +1,147 @@
+body {
+  font-family: "Montserrat";
+  text-align: center;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat";
+  font-weight: bolder;
+}
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+#maininfo {
+  padding-left: 50px;
+  text-align: left;
+  font-family: "Montserrat";
+  font-size: 35px;
+}
+#howDoesItWork {
+  font-family: "Montserrat";
+  font-weight: bolder;
+  font-size: 30px;
+  color: #0077c7;
+}
+
+.choice {
+  padding-top: 30px;
+}
+
+#member {
+  font-family: "Montserrat";
+  font-weight: bolder;
+  font-size: 20px;
+  padding-top: 30px;
+}
+
+.nav-item {
+  font-family: "Montserrat";
+  font-weight: bolder;
+  color: #0077c7;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.section-heading {
+  font-size: 3.5rem;
+  line-height: 1.5;
+}
+
+.navbar {
+  padding: 10 10 5.5rem;
+}
+
+.nav-item {
+  padding: 0 18px;
+  color: #0077c7;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat";
+  color: #0077c7;
+}
+
+#message {
+  background-color: #0077c7;
+  color: white;
+  font-family: "Montserrat";
+  height: 600px;
+}
+#welcomeMessage {
+  padding-left: 35px;
+  text-align: left;
+  font-size: 90px;
+  font-family: "Montserrat";
+}
+#joinMessage {
+  padding-left: 35px;
+  text-align: left;
+  font-size: 50px;
+  font-family: "Montserrat";
+}
+.title {
+  padding-left: 50px;
+  padding-bottom: 20px;
+  text-align: left;
+  position: relative;
+  color: #0077c7;
+}
+#slogan {
+  font-size: 65px;
+  font-family: "Montserrat";
+}
+
+#joinAs {
+  font-weight: bolder;
+  font-size: 25px;
+  font-family: "Montserrat";
+}
+
+.btn-group-vertical {
+  height: 250px;
+  width: 600px;
+  position: relative;
+  padding-top: 50px;
+  text-align: center;
+}
+
+#btnChoice {
+  position: relative;
+  text-align: center;
+  height: 60px;
+  width: 250px;
+}
+
+#formSignIn {
+  height: 250px;
+  width: 600px;
+  position: relative;
+  padding-left: 170px;
+  padding-top: 150px;
+  text-align: center;
+}
+#notMember {
+  text-align: center;
+  padding-right: 35px;
+  padding-top: 150px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 75px;
+  width: 100%;
+  background-color: #0077c7;
+  color: white;
+  text-align: center;
+  font-family: "Montserrat";
+}
