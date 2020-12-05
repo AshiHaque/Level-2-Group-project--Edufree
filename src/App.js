@@ -5,7 +5,7 @@ import Registration from"./Pages/Registration";
 import Login from "./Pages/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import {BrowserRouter as Router,Router,Switch} from "react-router-dom";
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 
 function App() {
   return (

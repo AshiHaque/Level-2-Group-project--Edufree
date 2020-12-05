@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-
+import {Link} from "react-router-dom";
 class Header extends React.Component{
     render(){
         return(
@@ -29,9 +29,10 @@ class Header extends React.Component{
                         </ul>
 
                         <ul class="navbar mx-auto">
-                            <a href="./Pages/Home.js">
-                                <img src="assets/images/LogoFull.png" width="150" height="50" alt="" loading="lazy"></img>
-                            </a>
+                            <Link to="/" class="navbar-brand logo">
+                            <img src="assets/images/LogoFull.png" width="150" height="50" alt="" loading="lazy"></img>
+                            </Link>
+                            
                         </ul>
 
                         <ul class="navbar-nav ml-auto">
@@ -39,9 +40,8 @@ class Header extends React.Component{
                                 <a class="nav-link" href="#">Forum</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Registration.js">Sign In</a>
+                                <Link to="/Registration" class="nav-link">Sign In</Link>
                             </li>
-
                         </ul>
                     </nav>
                 </header>
