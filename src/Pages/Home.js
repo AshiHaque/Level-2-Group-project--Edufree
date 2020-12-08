@@ -1,5 +1,5 @@
-import React,{Component} from "react";
-
+import React from "react";
+import students from '../images/STUDENT-IMM.png';
 
 class Home extends React.Component{
   render(){
@@ -7,7 +7,7 @@ class Home extends React.Component{
       <div>     
           <div class="row">
             <div class="col-6">
-              <img src="assets/images/STUDENT-IMM.png" width="900" height="600" alt=""></img>
+              <img src={students} width="900" height="500" alt="student picture"></img>
             </div>
             <div class="col-6">
               <h1 class="title" id="slogan"> Made for Students,by Students</h1>

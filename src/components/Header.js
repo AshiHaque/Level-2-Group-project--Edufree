@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import {Link} from "react-router-dom";
+import logo from '../images/LogoFull.png';
+
 class Header extends React.Component{
     render(){
         return(
@@ -30,7 +32,7 @@ class Header extends React.Component{
 
                         <ul class="navbar mx-auto">
                             <Link to="/" class="navbar-brand logo">
-                            <img src="assets/images/LogoFull.png" width="150" height="50" alt="" loading="lazy"></img>
+                            <img src={logo} width="150" height="50" alt="" loading="lazy"></img>
                             </Link>
                             
                         </ul>

@@ -1,5 +1,7 @@
-import React,{Component} from 'react';
+import React from 'react';
 import {Link} from "react-router-dom";
+
+
 class Login extends React.Component{
   render(){
     return(
@@ -10,7 +12,7 @@ class Login extends React.Component{
             <h1 id="welcomeMessage">Welcome back!</h1>
             <h2 id="joinMessage">
               Join our platform!
-              <br /> place where student can<br />
+              <br /> place where students can<br />
               help each other.
               <br /><br />
               <br />For anyone, anywhere.<br /> 

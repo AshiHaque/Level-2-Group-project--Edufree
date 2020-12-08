@@ -1,5 +1,8 @@
-import React,{Component} from 'react';
+import React from 'react';
 import {Link} from "react-router-dom";
+import GoogleLogo from '../images/GoogleLogo.png';
+import FacebookLogo from '../images/FacebookLogo.png';
+import EmailLogo from '../images/EmailLogo.png';
 class Registration extends React.Component{
   render(){
     return(
@@ -25,9 +28,9 @@ class Registration extends React.Component{
             <button type="button" className="btn btn-outline-primary" id="btnChoice">Educator</button>
           </ul>
           <div className="btn-group-vertical" role="group" aria-label="Basic example">
-            <button type="button" className="btn btn-outline-primary"> <img src="assets/images/GoogleLogo.png" width={30} height={30} style={{textAlign: 'center'}} />Continue with Google</button>
-            <button type="button" className="btn btn-outline-primary"> <img src="assets/images/FacebookLogo.png" width={30} height={30} style={{textAlign: 'center'}} />Continue with Facebook</button>
-            <button type="button" className="btn btn-outline-primary"> <img src="assets/images/EmailLogo.png" width={30} height={30} style={{textAlign: 'center'}} />Continue with Email</button>
+            <button type="button" className="btn btn-outline-primary"> <img src={GoogleLogo} width={30} height={30} style={{textAlign: 'center'}} />Continue with Google</button>
+            <button type="button" className="btn btn-outline-primary"> <img src={FacebookLogo} width={30} height={30} style={{textAlign: 'center'}} />Continue with Facebook</button>
+            <button type="button" className="btn btn-outline-primary"> <img src={EmailLogo} width={30} height={30} style={{textAlign: 'center'}} />Continue with Email</button>
           </div>
           <p id="member"><em>Already a member?</em><Link to="/Login" class="nav-link">Sign In</Link></p>
         </div>  
