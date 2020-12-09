@@ -34,7 +34,7 @@ class Header extends React.Component{
 
 
     <Nav className="navbar mx-auto">
-        <Link to="/" class="navbar-brand logo">
+        <Link to="/home" class="navbar-brand logo">
             <img src={logo} width="215" height="75" alt="" loading="lazy"></img>
         </Link>
     </Nav>

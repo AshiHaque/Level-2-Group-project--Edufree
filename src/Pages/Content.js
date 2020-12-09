@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
+import Nav from 'react-bootstrap/Nav'
 
 class Content extends React.Component{
     render(){
@@ -8,22 +8,19 @@ class Content extends React.Component{
          
   <div className="mb-2">
     <Button variant="primary" size="lg">
-      Large button
+      Resources
     </Button>{' '}
-    <Button variant="secondary" size="lg">
-      Large button
+    <Button variant="primary" size="lg">
+      Classes
     </Button>
-    <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
-  </Card.Body>
-</Card>
+    <Nav defaultActiveKey="/home" className="flex-column">
+  <Nav.Link href="/home">Java</Nav.Link>
+  <Nav.Link eventKey="link-1">Link</Nav.Link>
+  <Nav.Link eventKey="link-2">Link</Nav.Link>
+  <Nav.Link eventKey="disabled" disabled>
+    Disabled
+  </Nav.Link>
+</Nav>
    
   </div>
      
