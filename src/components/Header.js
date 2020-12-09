@@ -17,6 +17,7 @@ class Header extends React.Component{
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-sm-2">
       <NavDropdown title="Dropdown" id="basic-nav-dropdown ">
+      <NavDropdown.Item tag={Link} to="/Content">Content</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
         <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
@@ -44,6 +45,7 @@ class Header extends React.Component{
     <Nav className="ml-auto">
     <Nav.Link href="#home">Forum</Nav.Link>
     <Link to="/Registration" class="nav-link">Sign In</Link>
+    <Link to="/Content" class="nav-link">Content</Link>
     </Nav>
 
   </Navbar.Collapse>
