@@ -62,7 +62,9 @@ h3 {
   padding: 0 18px;
   color: #0077c7;
 }
-
+/*
+CONTENT PAGE
+*/
 .nav-link {
   font-size: 1.2rem;
   font-family: "Montserrat";
@@ -75,16 +77,23 @@ h3 {
   text-align: center;
 }
 .ContentContainer {
-  background-color: aqua;
+  background-color: rgb(255, 255, 255);
 }
 
-#Resouces {
-  margin-left: 700px;
+.navCol {
+  text-align: left;
 }
 
+#Resources {
+  text-align: center;
+}
 #Classes {
-  margin-left: 600px;
+  text-align: center;
 }
+
+/*
+CONTENT PAGE
+*/
 
 #message {
   background-color: #0077c7;
