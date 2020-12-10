@@ -1,5 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import clipboard from '../images/clipboard.png';
 import {Container, Row, Col, Nav, Button, Card} from 'react-bootstrap'
 
 class Content extends React.Component{
@@ -28,36 +29,37 @@ class Content extends React.Component{
   <Row>
 
     <Col lg={4}><Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="./images/clipboard.png" />
+  <Card.Img variant="top" src={clipboard} />
   <Card.Body>
     <Card.Title>Intro Java(Basics)</Card.Title>
     <Card.Text>
       All you need to get started with coding in Java!
-      IDE's, Java JDKs and other useful tips to help you get started.
+      IDE's, Java JDKs and other useful tips.
     </Card.Text>
     <Button variant="primary">Java(Basics)</Button>
   </Card.Body>
 </Card></Col>
 
     <Col lg={4}><Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
+  <Card.Img variant="top" src={clipboard} />
   <Card.Body>
     <Card.Title>Data Types(Java)</Card.Title>
     <Card.Text>
       Get started with learning the fundamental Java data types.
+      And learn their uses.
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    <Button variant="primary">Data Types(Java)</Button>
   </Card.Body>
 </Card></Col>
     <Col lg={4}><Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180" />
+  <Card.Img variant="top" src={clipboard} />
   <Card.Body>
     <Card.Title>Arrays(Java)</Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+      Dive into learning arrays in Java.
+      Learn their uses and how to create them.
     </Card.Text>
-    <Button variant="primary">Go somewhere</Button>
+    <Button variant="primary">Arrays(Java)</Button>
   </Card.Body>
 </Card></Col>
   </Row>
