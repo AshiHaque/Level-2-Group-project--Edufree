@@ -64,6 +64,7 @@ class Content extends React.Component{
 </Card></Col>
   </Row>
   </Container>
+  
   </div>
      
     )
