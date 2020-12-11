@@ -16,7 +16,7 @@ class Header extends React.Component{
                 <Navbar bg="light" expand="lg">
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-sm-2">
-                <Link to="/Content" class="nav-link">Courses</Link>
+                <Link to="/ContentJava" class="nav-link">Courses</Link>
     </Nav>
 
     <Form inline>

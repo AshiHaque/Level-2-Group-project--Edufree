@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import Content from "./Pages/Content";
+import ContentJava from "./Pages/ContentJava";
+import ContentCSS from "./Pages/ContentCSS";
 import Home from "./Pages/Home";
 import Registration from"./Pages/Registration";
 import Login from "./Pages/Login";
@@ -18,7 +19,8 @@ function App() {
             <Route exact path="/home" component={Home} />
             <Route path="/Registration" component={Registration} />
             <Route path="/Login" component={Login} />
-            <Route path="/Content" component={Content} />
+            <Route path="/ContentJava" component={ContentJava} />
+            <Route path="/ContentCSS" component={ContentCSS} />
           </Switch>
 
         <Footer/>

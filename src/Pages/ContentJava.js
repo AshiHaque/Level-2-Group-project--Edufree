@@ -10,8 +10,8 @@ class Content extends React.Component{
 <Container className="buttonContainer" fluid>
   <Row>
   <Col className="navCol" lg={3}><Nav defaultActiveKey="/home" className="flex-column">
-  <Nav.Link href="/home">Java</Nav.Link>
-  <Nav.Link eventKey="link-1">CSS</Nav.Link>
+  <Nav.Link href="/ContentJava">Java</Nav.Link>
+  <Nav.Link href="/ContentCSS"> CSS</Nav.Link>
   <Nav.Link eventKey="link-2">HTML</Nav.Link>
   <Nav.Link eventKey="disabled" disabled>
     Disabled
