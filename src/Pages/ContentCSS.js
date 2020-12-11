@@ -36,7 +36,7 @@ class Content extends React.Component{
     <Card.Text>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit
     </Card.Text>
-    <Button variant="primary">Java(Basics)</Button>
+    <Button variant="primary">Go To CSS</Button>
   </Card.Body>
 </Card></Col>
 
@@ -47,7 +47,7 @@ class Content extends React.Component{
     <Card.Text>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit
     </Card.Text>
-    <Button variant="primary">Data Types(Java)</Button>
+    <Button variant="primary">Go To CSS</Button>
   </Card.Body>
 </Card></Col>
     <Col lg={4}><Card style={{ width: '18rem' }}>
@@ -57,7 +57,7 @@ class Content extends React.Component{
     <Card.Text>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit
     </Card.Text>
-    <Button variant="primary">Arrays(Java)</Button>
+    <Button variant="primary">Go To CSS</Button>
   </Card.Body>
 </Card></Col>
   </Row>
@@ -69,7 +69,7 @@ class Content extends React.Component{
     <Card.Text>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit
     </Card.Text>
-    <Button variant="primary">Java(Basics)</Button>
+    <Button variant="primary">Go To CSS</Button>
   </Card.Body>
 </Card></Col>
 <Col lg={4}><Card style={{ width: '18rem' }}>
@@ -79,7 +79,7 @@ class Content extends React.Component{
     <Card.Text>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit
     </Card.Text>
-    <Button variant="primary">Java(Basics)</Button>
+    <Button variant="primary">Go To CSS</Button>
   </Card.Body>
 </Card></Col>
 <Col lg={4}><Card style={{ width: '18rem' }}>
@@ -89,7 +89,7 @@ class Content extends React.Component{
     <Card.Text>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit
     </Card.Text>
-    <Button variant="primary">Java(Basics)</Button>
+    <Button variant="primary">Go To CSS</Button>
   </Card.Body>
 </Card></Col>
   </Row>
