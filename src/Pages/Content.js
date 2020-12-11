@@ -17,10 +17,10 @@ class Content extends React.Component{
     Disabled
   </Nav.Link>
 </Nav></Col>
-    <Col lg={4}><Button id="Resources" variant="primary" size="lg" block>
+    <Col lg={3}><Button id="Resources" variant="primary" size="lg" block>
       Resources
     </Button></Col>
-    <Col lg={4}><Button id= "Classes" variant="primary" size="lg" block>
+    <Col lg={3}><Button id= "Classes" variant="primary" size="lg" block>
       Classes
     </Button></Col>
   </Row>
