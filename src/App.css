@@ -171,3 +171,22 @@ CONTENT PAGE
   text-align: center;
   font-family: "Montserrat";
 }
+
+
+
+/* NIC */
+.col-6 img {
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .row {
+    flex-direction: column;
+  }
+  .col-6 img {
+    width: 100%;
+  }
+  .col-6 {
+    max-width: 100% !important;
+  }
+}
