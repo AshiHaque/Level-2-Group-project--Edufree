@@ -16,7 +16,7 @@ function App() {
 
         <Header/>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/Home" component={Home} />
             <Route path="/Registration" component={Registration} />
             <Route path="/Login" component={Login} />
             <Route path="/ContentJava" component={ContentJava} />
