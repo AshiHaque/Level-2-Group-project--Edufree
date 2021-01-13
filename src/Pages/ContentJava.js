@@ -17,6 +17,7 @@ class Content extends React.Component{
     Disabled
   </Nav.Link>
 </Nav></Col>
+      
     <Col lg={3}><Button id="Resources" variant="primary" size="lg" block>
       Resources
     </Button></Col>
@@ -25,6 +26,8 @@ class Content extends React.Component{
     </Button></Col>
   </Row>
   </Container>
+  
+  <div className="cards">
 <Container className="ContentContainer">
   <Row>
 
@@ -128,13 +131,15 @@ class Content extends React.Component{
     <Card.Text>
       All you need to get started with coding in Java!
       IDE's, Java JDKs and other useful tips.
+      
     </Card.Text>
     <Button variant="primary">Java(Basics)</Button>
   </Card.Body>
 </Card></Col>
+
   </Row>
   </Container>
-  
+  </div>
   </div>
      
     )
