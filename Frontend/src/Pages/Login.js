@@ -66,7 +66,7 @@ class Login extends React.Component{
 
           <form className="form-signin" id="formSignIn"  onSubmit={this.handleSubmit}>
             <label htmlFor="inputEmail" className="sr-only">Email address</label>
-            <input type="email" id="inputEmail" className="form-control" placeholder="Email address" onChange={this.handleChangeUsername}/>
+            <input type="email" id="text" className="form-control" placeholder="Email address" onChange={this.handleChangeUsername}/>
             <label htmlFor="inputPassword" className="sr-only">Password</label>
             <input type="password" id="inputPassword" className="form-control" placeholder="Password"  onChange={this.handleChangePassword} />
             <div className="checkbox mb-3">
