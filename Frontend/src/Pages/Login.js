@@ -24,7 +24,7 @@ class Login extends React.Component{
       password: this.state.password
     };
 
-    axios.post(`/login`, { user })
+    axios.post('/Login', { user })
       .then(res => {
         console.log(res);
         console.log(res.data);
