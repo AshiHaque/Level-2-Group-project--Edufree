@@ -24,10 +24,16 @@ class Login extends React.Component{
       password: this.state.password
     };
 
-    axios.post('/Login', { user })
+    const options = {
+      headers: {'content-type':'application/json; charset=UTF-8'},
+    };
+
+    axios.post("http://localhost:8080/login", {user},options)
       .then(res => {
         console.log(res);
         console.log(res.data);
+      }).catch(error => {
+        console.log(error.message);
       })
   }
 
@@ -56,7 +62,7 @@ class Login extends React.Component{
 
           <form className="form-signin" id="formSignIn"  onSubmit={this.handleSubmit}>
             <label htmlFor="inputEmail" className="sr-only">Email address</label>
-            <input type="email" id="inputEmail" className="form-control" placeholder="Email address" onChange={this.handleChange}/>
+            <input type="text" id="inputEmail" className="form-control" placeholder="Email address" onChange={this.handleChange}/>
             <label htmlFor="inputPassword" className="sr-only">Password</label>
             <input type="password" id="inputPassword" className="form-control" placeholder="Password"  onChange={this.handleChange} />
             <div className="checkbox mb-3">

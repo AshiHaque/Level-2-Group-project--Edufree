@@ -7,6 +7,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,6 +26,7 @@ public class LoginController {
 	@Autowired
 	private JwtUtil jwtTokenUtil;
 	
+	@CrossOrigin(origins="http://localhost:3000")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 		
@@ -33,7 +35,9 @@ public class LoginController {
 					new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
 			
 		} catch (BadCredentialsException e){
+			System.out.println("aaa");
 			throw new Exception("Incorrect username or password");
+			
 		}
 		
 		final UserDetails userDetails = userDetailsService
