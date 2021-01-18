@@ -26,7 +26,7 @@ public class LoginController {
 	@Autowired
 	private JwtUtil jwtTokenUtil;
 	
-	@CrossOrigin(origins="http://localhost:3000")
+	@CrossOrigin(origins="http://localhost:3002")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 		
@@ -35,7 +35,6 @@ public class LoginController {
 					new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
 			
 		} catch (BadCredentialsException e){
-			System.out.println("aaa");
 			throw new Exception("Incorrect username or password");
 			
 		}

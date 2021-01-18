@@ -11,8 +11,12 @@ class Login extends React.Component{
   }
 
  
-  handleChange = event => {
+
+  handleChangeUsername = event => {
     this.setState({ username: event.target.value });
+  }
+
+  handleChangePassword = event => {
     this.setState({ password: event.target.value });
   }
 
@@ -20,21 +24,21 @@ class Login extends React.Component{
     event.preventDefault();
 
     const user = {
-      username: this.state.username,
-      password: this.state.password
+      "username" : this.state.username,
+      "password" : this.state.password
     };
 
     const options = {
-      headers: {'content-type':'application/json; charset=UTF-8'},
+      headers: {'content-type':'application/json; charset=UTF-8'}
     };
 
+
     axios.post("http://localhost:8080/login", {user},options)
-      .then(res => {
-        console.log(res);
-        console.log(res.data);
-      }).catch(error => {
-        console.log(error.message);
-      })
+    .then(res => {
+      console.log("a");
+      console.log(res);
+      console.log(res.data);
+    })
   }
 
 
@@ -62,9 +66,9 @@ class Login extends React.Component{
 
           <form className="form-signin" id="formSignIn"  onSubmit={this.handleSubmit}>
             <label htmlFor="inputEmail" className="sr-only">Email address</label>
-            <input type="text" id="inputEmail" className="form-control" placeholder="Email address" onChange={this.handleChange}/>
+            <input type="email" id="inputEmail" className="form-control" placeholder="Email address" onChange={this.handleChangeUsername}/>
             <label htmlFor="inputPassword" className="sr-only">Password</label>
-            <input type="password" id="inputPassword" className="form-control" placeholder="Password"  onChange={this.handleChange} />
+            <input type="password" id="inputPassword" className="form-control" placeholder="Password"  onChange={this.handleChangePassword} />
             <div className="checkbox mb-3">
               <label>
                 <input type="checkbox" defaultValue="remember-me" /> Remember me
