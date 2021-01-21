@@ -20,29 +20,34 @@ import group4.EduFree.util.JwtUtil;
 @Controller
 public class LoginController {
 	@Autowired
-	private EduFreeUserDetailsService userDetailsService;
+	private NormalLoginService loginService;
 	@Autowired
-	private AuthenticationManager authenticationManager;
+	private GoogleAuthenticationService googleService;
 	@Autowired
-	private JwtUtil jwtTokenUtil;
+	private FacebookAuthenticationService facebookService;
+	@Autowired
+	private GitHubAuthenticationService githubService;
 	
-	@CrossOrigin(origins="http://localhost:3002")
+	
+	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
-		
-		try {
-			authenticationManager.authenticate(
-					new UsernamePasswordAuthenticationToken(authenticationRequest.getUsername(), authenticationRequest.getPassword()));
-			
-		} catch (BadCredentialsException e){
-			throw new Exception("Incorrect username or password");
-			
-		}
-		
-		final UserDetails userDetails = userDetailsService
-				.loadUserByUsername(authenticationRequest.getUsername());
-		final String jwt = jwtTokenUtil.generateToken(userDetails);
-		
-		return ResponseEntity.ok(new AuthenticationResponse(jwt));
+	public ResponseEntity<?> login(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
+		return loginService.createAuthenticationToken(authenticationRequest);
 	}
+	
+	@RequestMapping(value = "/google", method = RequestMethod.POST)
+	public void googlelogin() throws InterruptedException {
+		googleService.wait();
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public void facebooklogin() throws InterruptedException {
+		facebookService.wait();
+	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public void githublogin() throws InterruptedException {
+		githubService.wait();
+	}
+	
 }

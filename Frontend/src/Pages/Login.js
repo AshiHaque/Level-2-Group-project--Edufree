@@ -33,7 +33,7 @@ class Login extends React.Component{
     };
 
 
-    axios.post("http://localhost:8080/login", {user},options)
+    axios.post("http://localhost:8080/login", {user}, options)
     .then(res => {
       console.log("a");
       console.log(res);
