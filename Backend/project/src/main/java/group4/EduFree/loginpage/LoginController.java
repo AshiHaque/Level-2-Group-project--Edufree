@@ -26,7 +26,7 @@ public class LoginController {
 	@Autowired
 	private JwtUtil jwtTokenUtil;
 	
-	@CrossOrigin(origins="http://localhost:3002")
+	@CrossOrigin(origins="http://localhost:3000")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
 		

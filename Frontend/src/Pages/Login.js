@@ -1,9 +1,12 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import axios from "axios";
+import Home from "./Home";
+
 
 
 class Login extends React.Component{
+
   state={
       username: '',
       password: ''
@@ -23,23 +26,28 @@ class Login extends React.Component{
   handleSubmit = event => {
     event.preventDefault();
 
+
+    const username = this.state.username;
+    const password = this.state.password;
+  
+  
     const user = {
-      "username" : this.state.username,
-      "password" : this.state.password
-    };
-
-    const options = {
-      headers: {'content-type':'application/json; charset=UTF-8'}
-    };
-
-
-    axios.post("http://localhost:8080/login", {user},options)
-    .then(res => {
-      console.log("a");
-      console.log(res);
-      console.log(res.data);
-    })
+      username,
+      password,  
   }
+
+    fetch('http://localhost:8080/login', {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers:{
+      'Content-Type': 'application/json'
+      }
+  }).then(res => {
+     console.log("HI"); 
+  })
+  .catch(error => console.error('Error:', error));
+    //state.reset();
+}
 
 
 
@@ -66,7 +74,7 @@ class Login extends React.Component{
 
           <form className="form-signin" id="formSignIn"  onSubmit={this.handleSubmit}>
             <label htmlFor="inputEmail" className="sr-only">Email address</label>
-            <input type="email" id="text" className="form-control" placeholder="Email address" onChange={this.handleChangeUsername}/>
+            <input type="text" id="email" className="form-control" placeholder="Email address" onChange={this.handleChangeUsername}/>
             <label htmlFor="inputPassword" className="sr-only">Password</label>
             <input type="password" id="inputPassword" className="form-control" placeholder="Password"  onChange={this.handleChangePassword} />
             <div className="checkbox mb-3">
