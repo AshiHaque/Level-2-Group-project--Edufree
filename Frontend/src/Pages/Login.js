@@ -26,7 +26,6 @@ class Login extends React.Component{
   handleSubmit = event => {
     event.preventDefault();
 
-
     const username = this.state.username;
     const password = this.state.password;
   
@@ -34,6 +33,7 @@ class Login extends React.Component{
     const user = {
       username,
       password,  
+
   }
 
     fetch('http://localhost:8080/login', {
