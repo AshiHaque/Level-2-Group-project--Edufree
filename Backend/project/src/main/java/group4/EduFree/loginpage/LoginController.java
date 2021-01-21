@@ -2,22 +2,15 @@ package group4.EduFree.loginpage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import group4.EduFree.authenticate.AuthenticationRequest;
-import group4.EduFree.authenticate.AuthenticationResponse;
-import group4.EduFree.userdetails.EduFreeUserDetailsService;
-import group4.EduFree.util.JwtUtil;
 
-@Controller
+@RestController
 public class LoginController {
 	@Autowired
 	private NormalLoginService loginService;
@@ -40,12 +33,12 @@ public class LoginController {
 		googleService.wait();
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/facebook", method = RequestMethod.POST)
 	public void facebooklogin() throws InterruptedException {
 		facebookService.wait();
 	}
 	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/github", method = RequestMethod.POST)
 	public void githublogin() throws InterruptedException {
 		githubService.wait();
 	}

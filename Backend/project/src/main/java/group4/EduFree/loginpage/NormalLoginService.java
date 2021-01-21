@@ -6,6 +6,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import group4.EduFree.authenticate.AuthenticationRequest;
@@ -13,6 +14,7 @@ import group4.EduFree.authenticate.AuthenticationResponse;
 import group4.EduFree.userdetails.EduFreeUserDetailsService;
 import group4.EduFree.util.JwtUtil;
 
+@Service
 public class NormalLoginService {
 	
 	@Autowired
