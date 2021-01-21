@@ -7,6 +7,7 @@ import Registration from"./Pages/Registration";
 import Login from "./Pages/Login";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import TestLoggedIn from "./Pages/TestLoggedIn"
 import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/Login" component={Login} />
             <Route path="/ContentJava" component={ContentJava} />
             <Route path="/ContentCSS" component={ContentCSS} />
+            <Route path="/TestLoggedIn" component={TestLoggedIn} />
           </Switch>
 
         <Footer/>

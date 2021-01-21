@@ -1,13 +1,12 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import axios from "axios";
-import Home from "./Home";
+import {Link,Redirect} from "react-router-dom";
 
 
 
 class Login extends React.Component{
 
   state={
+      redirect: null,
       username: '',
       password: ''
   
@@ -43,15 +42,17 @@ class Login extends React.Component{
       'Content-Type': 'application/json'
       }
   }).then(res => {
-     console.log("HI"); 
+    this.setState({ redirect: "/TestLoggedIn" });
+     console.log("User Logged In");
   })
   .catch(error => console.error('Error:', error));
-    //state.reset();
 }
 
 
-
   render(){
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
     return(
     <div>
       <div className="row">
