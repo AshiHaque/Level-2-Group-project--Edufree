@@ -20,19 +20,23 @@ public class LoginController {
 	private FacebookAuthenticationService facebookService;
 	@Autowired
 	private GitHubAuthenticationService githubService;
-
-	@CrossOrigin(origins="http://localhost:3000")
+	
+	
+	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> login(@RequestBody AuthenticationRequest authenticationRequest) throws Exception {
-		
-
-	@
-
-}
-
-@RequestMapping(value = "/facebook", method = RequestMethod.POST)
+		return loginService.createAuthenticationToken(authenticationRequest);
+	}
+	
+	@RequestMapping(value = "/google", method = RequestMethod.POST)
+	public void googlelogin() throws InterruptedException {
+		googleService.wait();
+	}
+	
+	@RequestMapping(value = "/facebook", method = RequestMethod.POST)
 	public void facebooklogin() throws InterruptedException {
-		facebookService.wait(
+		facebookService.wait();
+	}
 	
 	@RequestMapping(value = "/github", method = RequestMethod.POST)
 	public void githublogin() throws InterruptedException {
