@@ -12,6 +12,11 @@ public class User {
 	private long id;
 	private String userName;
 	private String password;
+	private String name;
+	private String surname;
+	private String email;
+	private String dob;
+	private String institution;
 	private boolean active;
 	private String roles;
 	
@@ -45,6 +50,36 @@ public class User {
 	}
 	public void setRoles(String roles) {
 		this.roles = roles;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSurname() {
+		return surname;
+	}
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+	public String getInstitution() {
+		return institution;
+	}
+	public void setInstitution(String institution) {
+		this.roles = institution;
 	}
 	
 }
