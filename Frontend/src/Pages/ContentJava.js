@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import clipboard from "../images/clipboard.png";
+import {Link} from "react-router-dom";
 import { Container, Row, Col, Nav, Button, Card } from "react-bootstrap";
 
 class Content extends React.Component {
@@ -46,7 +47,7 @@ class Content extends React.Component {
                         All you need to get started with coding in Java! IDE's,
                         Java JDKs and other useful tips.
                       </Card.Text>
-                      <Button variant="primary">Java(Basics)</Button>
+                      <Button variant="primary"> <Link to="/ContentTest" class="nav-link">Java(Basics)</Link></Button>
                     </Card.Body>
                   </Card>
                 </div>

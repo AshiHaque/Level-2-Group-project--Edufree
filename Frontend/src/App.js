@@ -8,7 +8,8 @@ import Login from "./Pages/Login";
 import UserInfo from "./Pages/UserInfo";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import TestLoggedIn from "./Pages/TestLoggedIn"
+import TestLoggedIn from "./Pages/TestLoggedIn";
+import ContentTest from "./Pages/ContentTest";
 import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/ContentJava" component={ContentJava} />
             <Route path="/ContentCSS" component={ContentCSS} />
             <Route path="/TestLoggedIn" component={TestLoggedIn} />
+            <Route path="/ContentTest" component={ContentTest} />
           </Switch>
 
         <Footer/>

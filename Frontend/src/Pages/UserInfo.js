@@ -70,7 +70,7 @@ class UserInfo extends React.Component{
       institution
   }
 
-    fetch('http://localhost:8080/Register', {
+    fetch('http://localhost:8080/register', {
       method: 'POST',
       body: JSON.stringify(userReg),
       headers:{
