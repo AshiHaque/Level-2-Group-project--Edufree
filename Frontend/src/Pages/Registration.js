@@ -30,7 +30,7 @@ class Registration extends React.Component{
           <div className="btn-group-vertical" role="group" aria-label="Basic example">
             <button type="button" className="btn btn-outline-primary"> <img src={GoogleLogo} width={30} height={30} style={{textAlign: 'center'}} />Continue with Google</button>
             <button type="button" className="btn btn-outline-primary"> <img src={FacebookLogo} width={30} height={30} style={{textAlign: 'center'}} />Continue with Facebook</button>
-            <button type="button" className="btn btn-outline-primary"> <img src={EmailLogo} width={30} height={30} style={{textAlign: 'center'}} />Continue with Email</button>
+            <button type="button" className="btn btn-outline-primary"> <img src={EmailLogo} width={30} height={30} style={{textAlign: 'center'}} /><Link to="/UserInfo" class="nav-link">Continue with Email</Link></button>
           </div>
           <p id="member"><em>Already a member?</em><Link to="/Login" class="nav-link">Sign In</Link></p>
         </div>  

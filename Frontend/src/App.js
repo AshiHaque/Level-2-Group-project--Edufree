@@ -5,6 +5,7 @@ import ContentCSS from "./Pages/ContentCSS";
 import Home from "./Pages/Home";
 import Registration from"./Pages/Registration";
 import Login from "./Pages/Login";
+import UserInfo from "./Pages/UserInfo";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import TestLoggedIn from "./Pages/TestLoggedIn"
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/Home" component={Home} />
             <Route path="/Registration" component={Registration} />
             <Route path="/Login" component={Login} />
+            <Route path="/UserInfo" component={UserInfo} />
             <Route path="/ContentJava" component={ContentJava} />
             <Route path="/ContentCSS" component={ContentCSS} />
             <Route path="/TestLoggedIn" component={TestLoggedIn} />
