@@ -8,12 +8,16 @@ class UserInfo extends React.Component{
   state={
       redirect: null,
       username: '',
-      password: ''
+      password: '',
+      email: '',
+      name: '',
+      surname: '',
+      dob: '',
+      institution: ''
   
   }
 
  
-
   handleChangeUsername = event => {
     this.setState({ username: event.target.value });
   }
@@ -22,28 +26,59 @@ class UserInfo extends React.Component{
     this.setState({ password: event.target.value });
   }
 
+  
+  handleChangeEmail = event => {
+    this.setState({email: event.target.value });
+  }
+
+  handleChangeName = event => {
+    this.setState({ name: event.target.value });
+  }
+
+  
+  handleChangeSurname = event => {
+    this.setState({ surname: event.target.value });
+  }
+
+  handleChangeDob = event => {
+    this.setState({ dob: event.target.value });
+  }
+
+  handleChangeInstitution = event => {
+    this.setState({ institution: event.target.value });
+  }
+
   handleSubmit = event => {
     event.preventDefault();
 
     const username = this.state.username;
     const password = this.state.password;
+    const email = this.state.email;
+    const name = this.state.name;
+    const surname = this.state.surname;
+    const dob = this.state.dob;
+    const institution = this.state.institution;
   
   
-    const user = {
+    const userReg = {
       username,
       password,  
-
+      email,
+      name,
+      surname,
+      dob,
+      institution
   }
 
-    fetch('http://localhost:8080/login', {
+    fetch('http://localhost:8080/Register', {
       method: 'POST',
-      body: JSON.stringify(user),
+      body: JSON.stringify(userReg),
       headers:{
       'Content-Type': 'application/json'
       }
   }).then(res => {
     this.setState({ redirect: "/TestLoggedIn" });
-     console.log("User Logged In");
+     console.log("User Registered");
   })
   .catch(error => console.error('Error:', error));
 }
@@ -73,22 +108,22 @@ class UserInfo extends React.Component{
 
           <form className="form-signin" id="formSignIn"  onSubmit={this.handleSubmit}>
     
-            <input type="text" id="email" className="form-control" placeholder="Email address" onChange={this.handleChangeUsername}/>
+            <input type="text" id="email" className="form-control" placeholder="Email address" onChange={this.handleChangeEmail}/>
             
             <input type="password" id="inputPassword" className="form-control" placeholder="Password"  onChange={this.handleChangePassword} />
 
             <input type="text" id="username" className="form-control" placeholder="Username" onChange={this.handleChangeUsername}/>
             
-            <input type="text" id="name" className="form-control" placeholder="Name" onChange={this.handleChangeUsername}/>
+            <input type="text" id="name" className="form-control" placeholder="Name" onChange={this.handleChangeName}/>
             
-            <input type="text" id="surname" className="form-control" placeholder="Surname" onChange={this.handleChangeUsername}/>
+            <input type="text" id="surname" className="form-control" placeholder="Surname" onChange={this.handleChangeSurname}/>
 
-            <input type="date" id="dob" className="form-control" placeholder="DD/MM/YYYY" onChange={this.handleChangeUsername}/> Where are you studying?
+            <input type="date" id="dob" className="form-control" placeholder="DD/MM/YYYY" onChange={this.handleChangeDob}/> Where are you studying?
             
             <br/>
-            <input type="radio" id="highschool" name="radio"/>HighSchool
-            <input type="radio" id="university" name="radio"/>University
-            <input type="radio" id="na" name="radio"/>N/A
+            <input type="radio" id="highschool" name="radio" onChange={this.handleChangeInstitution}/>HighSchool
+            <input type="radio" id="university" name="radio" onChange={this.handleChangeInstitution}/>University
+            <input type="radio" id="na" name="radio" onChange={this.handleChangeInstitution}/>N/A
 
             <button className="btn btn-lg btn-primary btn-block" type="submit" >Creat your account!</button>
           </form>
