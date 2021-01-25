@@ -53,7 +53,7 @@ class UserInfo extends React.Component{
   handleSubmit = event => {
     event.preventDefault();
 
-    const username = this.state.username;
+    const userName = this.state.username;
     const password = this.state.password;
     const email = this.state.email;
     const name = this.state.name;
@@ -65,7 +65,7 @@ class UserInfo extends React.Component{
   
   
     const userReg = {
-      username,
+      userName,
       password,  
       email,
       name,
