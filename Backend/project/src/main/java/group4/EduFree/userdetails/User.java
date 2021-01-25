@@ -79,7 +79,7 @@ public class User {
 		return institution;
 	}
 	public void setInstitution(String institution) {
-		this.roles = institution;
+		this.institution = institution;
 	}
 	
 }

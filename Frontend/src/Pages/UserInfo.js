@@ -13,7 +13,9 @@ class UserInfo extends React.Component{
       name: '',
       surname: '',
       dob: '',
-      institution: ''
+      institution: '',
+      role:'ROLE_USER',
+      active:'True'
   
   }
 
@@ -58,6 +60,8 @@ class UserInfo extends React.Component{
     const surname = this.state.surname;
     const dob = this.state.dob;
     const institution = this.state.institution;
+    const role=this.state.role;
+    const active=this.state.active;
   
   
     const userReg = {
@@ -67,7 +71,9 @@ class UserInfo extends React.Component{
       name,
       surname,
       dob,
-      institution
+      institution,
+      role,
+      active
   }
 
     fetch('http://localhost:8080/register', {
