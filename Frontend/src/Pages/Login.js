@@ -42,8 +42,14 @@ class Login extends React.Component{
       'Content-Type': 'application/json'
       }
   }).then(res => {
-    this.setState({ redirect: "/TestLoggedIn" });
+    if (res.ok) { // if HTTP-status is 200-299
+      // get the response body (the method explained below)
+      this.setState({ redirect: "/TestLoggedIn" });
      console.log("User Logged In");
+    }
+    else{
+      console.log("Error");
+    }
   })
   .catch(error => console.error('Error:', error));
 }
