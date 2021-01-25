@@ -34,7 +34,7 @@ class Content extends React.Component {
         }).then(response => {
           this.setState({error: '', msg: 'Sucessfully uploaded file'});
         }).catch(err => {
-          this.setState({error: err});
+          console.error('Error:', err)
         });
     
       }
