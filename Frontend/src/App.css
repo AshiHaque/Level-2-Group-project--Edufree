@@ -79,6 +79,7 @@ CONTENT PAGE
 }
 .ContentContainer {
   background-color: rgb(255, 255, 255);
+  padding-bottom: 100px;
 }
 
 .navCol {
