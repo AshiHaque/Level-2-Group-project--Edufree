@@ -3,8 +3,17 @@ import {Link} from "react-router-dom";
 import GoogleLogo from '../images/GoogleLogo.png';
 import FacebookLogo from '../images/FacebookLogo.png';
 import EmailLogo from '../images/EmailLogo.png';
+import {GoogleLogin} from 'react-google-login';
+
+
+
 class Registration extends React.Component{
   render(){
+
+    const responseGoogle = (response) => {
+      console.log(response);
+    }
+    
     return(
     <div>
       <div className="row">
@@ -28,7 +37,14 @@ class Registration extends React.Component{
             <button type="button" className="btn btn-outline-primary" id="btnChoice">Educator</button>
           </ul>
           <div className="btn-group-vertical" role="group" aria-label="Basic example">
-            <button type="button" className="btn btn-outline-primary"> <img src={GoogleLogo} width="30" height="30" style={{textAlign: 'center'}} />Continue with Google</button>
+             <GoogleLogin
+    clientId="104419111985-q5kvvf8bh6pu6fb215864qsdni9mt07h.apps.googleusercontent.com"
+    buttonText="Login"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+  />
+
             <button type="button" className="btn btn-outline-primary"> <img src={FacebookLogo} width={30} height={30} style={{textAlign: 'center'}} />Continue with Facebook</button>
             <button type="button" className="btn btn-outline-primary"> <img src={EmailLogo} width={30} height={30} style={{textAlign: 'center'}} /><Link to="/UserInfo" class="nav-link">Continue with Email</Link></button>
           </div>
@@ -36,6 +52,10 @@ class Registration extends React.Component{
         </div>  
       </div>
     </div>
+    
+
+
+
     )
   }
 }
