@@ -83,7 +83,7 @@ class UserInfo extends React.Component{
       'Content-Type': 'application/json'
       }
   }).then(res => {
-    this.setState({ redirect: "/TestLoggedIn" });
+    this.setState({ redirect: "/" });
      console.log("User Registered");
   })
   .catch(error => console.error('Error:', error));
