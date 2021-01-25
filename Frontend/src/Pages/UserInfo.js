@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link,Redirect} from "react-router-dom";
+import {Redirect} from "react-router-dom";
 
 
 
@@ -83,6 +83,7 @@ class UserInfo extends React.Component{
       'Content-Type': 'application/json'
       }
   }).then(res => {
+    window.alert("Your account is created!");
     this.setState({ redirect: "/" });
      console.log("User Registered");
   })
