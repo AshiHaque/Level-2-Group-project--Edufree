@@ -1,9 +1,9 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import {Link} from "react-router-dom";
-import GoogleLogo from '../images/GoogleLogo.png';
-import FacebookLogo from '../images/FacebookLogo.png';
 import EmailLogo from '../images/EmailLogo.png';
 import {GoogleLogin} from 'react-google-login';
+import FacebookLogin from 'react-facebook-login';
 
 
 
@@ -11,6 +11,10 @@ class Registration extends React.Component{
   render(){
 
     const responseGoogle = (response) => {
+      console.log(response);
+    }
+
+    const responseFacebook = (response) => {
       console.log(response);
     }
     
@@ -43,6 +47,12 @@ class Registration extends React.Component{
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={'single_host_origin'}/></button>
+                <button type="button" className="btn btn-outline-primary"><FacebookLogin
+                appId="700968853829126"
+                autoLoad={true}
+                fields="name,email,picture"
+                //onClick={componentClicked}
+                callback={responseFacebook} /></button>
             <button type="button" className="btn btn-outline-primary"> <Link to="/UserInfo" class="nav-link">Continue with Email</Link></button>
           </div>
           <p id="member"><em>Already a member?</em><Link to="/Login" class="nav-link">Sign In</Link></p>
