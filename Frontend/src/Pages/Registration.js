@@ -49,9 +49,9 @@ class Registration extends React.Component{
                 cookiePolicy={'single_host_origin'}/></button>
                 <button type="button" className="btn btn-outline-primary"><FacebookLogin
                 appId="700968853829126"
-                autoLoad={true}
+                autoLoad={false}
                 fields="name,email,picture"
-                //onClick={componentClicked}
+                onClick={responseFacebook}
                 callback={responseFacebook} /></button>
             <button type="button" className="btn btn-outline-primary"> <Link to="/UserInfo" class="nav-link">Continue with Email</Link></button>
           </div>
