@@ -1,58 +1,50 @@
 package group4.EduFree.content;
 
-import javax.persistence.*;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.Entity;
 
 @Entity
 public class FileEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String name;
+	private String url;
+	
+	public FileEntity() {
+		
+	}
+	
+	public FileEntity(String name, String url) {
+		this.name = name;
+		this.url = url;
+	}
+	
+	public Long getId() {
+		return this.id;
+	}
 
-    private String fileName;
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    private String contentType;
+	public String getName() {
+		return this.name;
+	}
 
-    @Lob
-    private byte[] data;
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public FileEntity() {
-    }
+	public String getUrl() {
+		return this.url;
+	}
 
-    public FileEntity(String fileName, String contentType, byte[] data) {
-        this.fileName = fileName;
-        this.contentType = contentType;
-        this.data = data;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getFileName() {
-        return fileName;
-    }
-
-    public void setFileName(String fileName) {
-        this.fileName = fileName;
-    }
-
-    public String getContentType() {
-        return contentType;
-    }
-
-    public void setContentType(String contentType) {
-        this.contentType = contentType;
-    }
-
-    public byte[] getData() {
-        return data;
-    }
-
-    public void setData(byte[] data) {
-        this.data = data;
-    }
+	public void setUrl(String url) {
+		this.url = url;
+	}
 }

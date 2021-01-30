@@ -1,7 +1,7 @@
 package group4.EduFree.content;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import org.springframework.data.jpa.repository.JpaRepository;
+
 public interface FileEntityRepository extends JpaRepository<FileEntity, Long> {
 }
+
