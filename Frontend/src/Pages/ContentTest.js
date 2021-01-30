@@ -28,7 +28,7 @@ class Content extends React.Component {
         data.append('file', this.state.file);
         data.append('name', this.state.file.name);
     
-        fetch('http://localhost:8080/api/files', {
+        fetch('http://localhost:8080/uploadFile', {
           method: 'POST',
           body: data
         }).then(response => {
@@ -40,7 +40,7 @@ class Content extends React.Component {
       }
     
       downloadRandomImage = () => {
-        fetch('http://localhost:8080/api/files')
+        fetch('http://localhost:8080/downloadFile')
           .then(response => {
             const filename =  response.headers.get('Content-Disposition').split('filename=')[1];
             response.blob().then(blob => {

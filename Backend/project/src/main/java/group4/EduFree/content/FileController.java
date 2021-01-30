@@ -24,16 +24,16 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @Controller
-@CrossOrigin("http://localhost:3000")
+
 public class FileController {
 
 	private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
 	@Autowired
 	private FileStorageService fileStorageService;
-
+	@CrossOrigin("http://localhost:3000")
 	@PostMapping("/uploadFile")
-	public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
+	public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file) {
 		String fileName = new String();
 		try {
 			fileName = fileStorageService.storeFile(file);
@@ -46,17 +46,16 @@ public class FileController {
 				.path(fileName)
 				.toUriString();
 
-		return new UploadFileResponse(fileName, fileDownloadUri,
-				file.getContentType(), file.getSize());
+		return  ResponseEntity.ok("File uploaded");
 	}
-
-	@PostMapping("/uploadMultipleFiles")
+//If we want to upload more files..
+	/*@PostMapping("/uploadMultipleFiles")
 	public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
 		return Arrays.asList(files)
 				.stream()
 				.map(file -> uploadFile(file))
 				.collect(Collectors.toList());
-	}
+	}*/
 
 	@GetMapping("/downloadFile/{fileName:.+}")
 	public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {

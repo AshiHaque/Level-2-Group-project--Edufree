@@ -1,10 +1,9 @@
 package group4.EduFree.content;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
-import org.hibernate.annotations.Entity;
 
 @Entity
 public class FileEntity {
