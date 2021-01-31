@@ -5,6 +5,7 @@ import ContentCSS from "./Pages/ContentCSS";
 import Home from "./Pages/Home";
 import Registration from"./Pages/Registration";
 import Login from "./Pages/Login";
+import Dashboard from "./Pages/Dashboard";
 import UserInfo from "./Pages/UserInfo";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -27,6 +28,10 @@ function App() {
             <Route path="/ContentCSS" component={ContentCSS} />
             <Route path="/TestLoggedIn" component={TestLoggedIn} />
             <Route path="/ContentTest" component={ContentTest} />
+            <Route path="/Dashboard" component={Dashboard} />
+
+
+
           </Switch>
 
         <Footer/>
