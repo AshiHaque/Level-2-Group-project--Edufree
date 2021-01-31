@@ -40,15 +40,14 @@ class Content extends React.Component {
       }
     
       downloadRandomImage = () => {
-        fetch('http://localhost:8080/downloadFile')
+        fetch('http://localhost:8080/downloadFile/download.png')
           .then(response => {
-            const filename =  response.headers.get('Content-Disposition').split('filename=')[1];
             response.blob().then(blob => {
-              let url=  window.URL.createObjectURL(blob);
-              let a = document.createElement('a');
-              a.href = url;
-              a.download = filename;
-              a.click();
+              let url = window.URL.createObjectURL(blob);
+	            let a = document.createElement('a');
+            	a.href = url;
+            	a.download = "download.png";
+	            a.click();
             });
         });
       }

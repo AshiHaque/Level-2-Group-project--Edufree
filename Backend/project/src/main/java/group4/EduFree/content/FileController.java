@@ -33,7 +33,7 @@ public class FileController {
 	private FileStorageService fileStorageService;
 	@CrossOrigin("http://localhost:3000")
 	@PostMapping("/uploadFile")
-	public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file) {
+	public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
 		String fileName = new String();
 		try {
 			fileName = fileStorageService.storeFile(file);
@@ -46,7 +46,8 @@ public class FileController {
 				.path(fileName)
 				.toUriString();
 
-		return  ResponseEntity.ok("File uploaded");
+		return new UploadFileResponse(fileName, fileDownloadUri,
+				file.getContentType(), file.getSize());
 	}
 //If we want to upload more files..
 	/*@PostMapping("/uploadMultipleFiles")
@@ -56,7 +57,7 @@ public class FileController {
 				.map(file -> uploadFile(file))
 				.collect(Collectors.toList());
 	}*/
-
+@CrossOrigin("http://localhost:3000")
 	@GetMapping("/downloadFile/{fileName:.+}")
 	public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
 		// Load file as Resource
