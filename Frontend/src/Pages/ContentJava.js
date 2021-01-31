@@ -1,8 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import clipboard from "../images/clipboard.png";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav, Button, Card } from "react-bootstrap";
+import ContentCard from "../components/ContentCard";
 
 class Content extends React.Component {
   render() {
@@ -38,145 +39,31 @@ class Content extends React.Component {
           <Container className="ContentContainer">
             <Row>
               <Col lg={4}>
-                <div class="m-2">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={clipboard} />
-                    <Card.Body>
-                      <Card.Title>Intro Java(Basics)</Card.Title>
-                      <Card.Text>
-                        All you need to get started with coding in Java! IDE's,
-                        Java JDKs and other useful tips.
-                      </Card.Text>
-                      <Button variant="primary"> <Link to="/ContentTest" class="nav-link">Java(Basics)</Link></Button>
-                    </Card.Body>
-                  </Card>
-                </div>
+                <ContentCard />
               </Col>
-
+              <ContentCard />
               <Col lg={4}>
-                <div class="m-2">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={clipboard} />
-                    <Card.Body>
-                      <Card.Title>Data Types(Java)</Card.Title>
-                      <Card.Text>
-                        Get started with learning the fundamental Java data
-                        types. And learn their uses.
-                      </Card.Text>
-                      <Button variant="primary">Data Types(Java)</Button>
-                    </Card.Body>
-                  </Card>
-                </div>
-              </Col>
-
-              <Col lg={4}>
-                <div class="m-2">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={clipboard} />
-                    <Card.Body>
-                      <Card.Title>Arrays(Java)</Card.Title>
-                      <Card.Text>
-                        Dive into learning arrays in Java. Learn their uses and
-                        how to create them.
-                      </Card.Text>
-                      <Button variant="primary">Arrays(Java)</Button>
-                    </Card.Body>
-                  </Card>
-                </div>
+                <ContentCard />
               </Col>
             </Row>
+
             <Row>
               <Col lg={4}>
-                <div class="m-2">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={clipboard} />
-                    <Card.Body>
-                      <Card.Title>Intro Java(Basics)</Card.Title>
-                      <Card.Text>
-                        All you need to get started with coding in Java! IDE's,
-                        Java JDKs and other useful tips.
-                      </Card.Text>
-                      <Button variant="primary">Java(Basics)</Button>
-                    </Card.Body>
-                  </Card>
-                </div>
+                <ContentCard />
               </Col>
+              <ContentCard />
               <Col lg={4}>
-                <div class="m-2">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={clipboard} />
-                    <Card.Body>
-                      <Card.Title>Intro Java(Basics)</Card.Title>
-                      <Card.Text>
-                        All you need to get started with coding in Java! IDE's,
-                        Java JDKs and other useful tips.
-                      </Card.Text>
-                      <Button variant="primary">Java(Basics)</Button>
-                    </Card.Body>
-                  </Card>
-                </div>
-              </Col>
-              <Col lg={4}>
-                <div class="m-2">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={clipboard} />
-                    <Card.Body>
-                      <Card.Title>Intro Java(Basics)</Card.Title>
-                      <Card.Text>
-                        All you need to get started with coding in Java! IDE's,
-                        Java JDKs and other useful tips.
-                      </Card.Text>
-                      <Button variant="primary">Java(Basics)</Button>
-                    </Card.Body>
-                  </Card>
-                </div>
+                <ContentCard />
               </Col>
             </Row>
+
             <Row>
               <Col lg={4}>
-                <div class="m-2">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={clipboard} />
-                    <Card.Body>
-                      <Card.Title>Intro Java(Basics)</Card.Title>
-                      <Card.Text>
-                        All you need to get started with coding in Java! IDE's,
-                        Java JDKs and other useful tips.
-                      </Card.Text>
-                      <Button variant="primary">Java(Basics)</Button>
-                    </Card.Body>
-                  </Card>
-                </div>
+                <ContentCard />
               </Col>
+              <ContentCard />
               <Col lg={4}>
-                <div class="m-2">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={clipboard} />
-                    <Card.Body>
-                      <Card.Title>Intro Java(Basics)</Card.Title>
-                      <Card.Text>
-                        All you need to get started with coding in Java! IDE's,
-                        Java JDKs and other useful tips.
-                      </Card.Text>
-                      <Button variant="primary">Java(Basics)</Button>
-                    </Card.Body>
-                  </Card>
-                </div>
-              </Col>
-              <Col lg={4}>
-                <div class="m-2">
-                  <Card style={{ width: "18rem" }}>
-                    <Card.Img variant="top" src={clipboard} />
-                    <Card.Body>
-                      <Card.Title>Intro Java(Basics)</Card.Title>
-                      <Card.Text>
-                        All you need to get started with coding in Java! IDE's,
-                        Java JDKs and other useful tips.
-                      </Card.Text>
-                      <Button variant="primary">Java(Basics)</Button>
-                    </Card.Body>
-                  </Card>
-                </div>
+                <ContentCard />
               </Col>
             </Row>
           </Container>

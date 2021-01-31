@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import clipboard from "../images/clipboard.png";
+import { Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-class Card extends React.Component {
+class ContentCard extends React.Component {
   render() {
     return (
-      <div class="m-2">
+      <div class="m-4">
         <Card style={{ width: "18rem" }}>
           <Card.Img variant="top" src={clipboard} />
           <Card.Body>
@@ -26,4 +29,4 @@ class Card extends React.Component {
   }
 }
 
-export default Card;
+export default ContentCard;
