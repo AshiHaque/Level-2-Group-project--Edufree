@@ -7,7 +7,8 @@ class Content extends React.Component {
     state = {
         file: '',
         error: '',
-        msg: ''
+        msg: '',
+        fileName:''
       }
     
       uploadFile = (event) => {
@@ -38,15 +39,19 @@ class Content extends React.Component {
         });
     
       }
+
+      handleChangeFileName = event => {
+        this.setState({ fileName: event.target.value });
+      }
     
       downloadRandomImage = () => {
-        fetch('http://localhost:8080/downloadFile/download.png')
+        fetch('http://localhost:8080/downloadFile/'+this.state.fileName)
           .then(response => {
             response.blob().then(blob => {
               let url = window.URL.createObjectURL(blob);
 	            let a = document.createElement('a');
             	a.href = url;
-            	a.download = "download.png";
+            	a.download = this.state.fileName;
 	            a.click();
             });
         });
@@ -70,6 +75,8 @@ class Content extends React.Component {
         </div>
         <div className="App-intro">
           <h3>Download file</h3>
+          <h2>Type the file thet you want to download</h2>
+          <input type="text" id="fileName" className="form-control" placeholder="File name" onChange={this.handleChangeFileName}/>
           <button onClick={this.downloadRandomImage}>Download</button>
         </div>
       </div>

@@ -38,10 +38,12 @@ class Content extends React.Component {
         <div className="cards">
           <Container className="ContentContainer">
             <Row>
-              <Col lg={4}>
+            <Col lg={4}>
                 <ContentCard />
               </Col>
+              <Col lg={4}>
               <ContentCard />
+              </Col>
               <Col lg={4}>
                 <ContentCard />
               </Col>
@@ -51,17 +53,21 @@ class Content extends React.Component {
               <Col lg={4}>
                 <ContentCard />
               </Col>
+              <Col lg={4}>
               <ContentCard />
+              </Col>
               <Col lg={4}>
                 <ContentCard />
               </Col>
             </Row>
 
             <Row>
-              <Col lg={4}>
+            <Col lg={4}>
                 <ContentCard />
               </Col>
+              <Col lg={4}>
               <ContentCard />
+              </Col>
               <Col lg={4}>
                 <ContentCard />
               </Col>
