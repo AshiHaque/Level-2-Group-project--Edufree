@@ -8,20 +8,21 @@ class ContentCard extends React.Component {
   render() {
     return (
       <div class="m-4">
-        <Card style={{ width: "18rem" }}>
+        <Card style={{ width: "18rem" ,borderRadius:50}}>
           <Card.Img variant="top" src={clipboard} />
           <Card.Body>
-            <Card.Title>Intro Java(Basics)</Card.Title>
+            <Card.Title>Intro Java(Basics) <p style={{background: "lightskyblue" ,borderRadius:50 ,fontSize:15}}>#Notes</p></Card.Title>
             <Card.Text>
               All you need to get started with coding in Java! IDE's, Java JDKs
               and other useful tips.
             </Card.Text>
-            <Button variant="primary">
-              {" "}
+            <Button style={{background: "lightskyblue" ,borderRadius:10 ,height:40 ,paddingBottom:60,marginBottom:20,marginLeft:50 }}>
               <Link to="/ContentTest" class="nav-link">
-                Java(Basics)
+                Download
               </Link>
             </Button>
+            <Card class="shadow-lg p-4 mb-4 bg-white"style={{ width: '15rem',textAlign:"central"}} >@Team EduFree</Card>
+            <input  class="star" type="checkbox" title="bookmark page"></input>
           </Card.Body>
         </Card>
       </div>
