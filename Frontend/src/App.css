@@ -144,6 +144,11 @@ CONTENT PAGE
   position: relative;
   color: #0077c7;
 }
+
+#starred {
+  color: rgb(255, 187, 0);
+}
+
 #slogan {
   font-size: 65px;
   font-family: "Montserrat";

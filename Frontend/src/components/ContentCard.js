@@ -16,13 +16,13 @@ class ContentCard extends React.Component {
               All you need to get started with coding in Java! IDE's, Java JDKs
               and other useful tips.
             </Card.Text>
-            <Button style={{background: "lightskyblue" ,borderRadius:10 ,height:40 ,paddingBottom:60,marginBottom:20,marginLeft:50 }}>
-              <Link to="/ContentTest" class="nav-link">
+            <Button id="downloadButton" style={{background: "lightskyblue" ,borderRadius:10 ,height:40 ,paddingBottom:50,marginBottom:20}}>
+              <Link to="/ContentTest" class="nav-link" >
                 Download
               </Link>
             </Button>
-            <Card class="shadow-lg p-4 mb-4 bg-white"style={{ width: '15rem',textAlign:"central"}} >@Team EduFree</Card>
-            <input  class="star" type="checkbox" title="bookmark page"></input>
+            <Card class="shadow-lg p-4 mb-4 bg-white"style={{ width: '15rem',textAlign:"Left"}} >@Team EduFree</Card>
+            <input  class="star" id="starred"type="checkbox" title="bookmark page"></input>
           </Card.Body>
         </Card>
       </div>
