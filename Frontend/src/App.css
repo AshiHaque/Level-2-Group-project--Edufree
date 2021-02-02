@@ -86,6 +86,14 @@ CONTENT PAGE
   text-align: left;
 }
 
+/*
+CardComponent
+*/
+
+#starContent {
+  color: rgb(255, 196, 0);
+}
+
 #Resources {
   text-align: center;
 }
