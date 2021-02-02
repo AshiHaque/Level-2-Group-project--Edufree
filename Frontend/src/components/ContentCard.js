@@ -8,11 +8,11 @@ class ContentCard extends React.Component {
   render() {
     return (
       <div class="m-4">
-        <Card style={{ width: "18rem", borderRadius: 50 }}>
+        <Card style={{ width: "18rem", borderRadius: 50,}}>
           <Card.Img variant="top" src={clipboard} />
           <Card.Body>
-            <Card.Title>
-              Intro Java(Basics){" "}
+            <Card.Title> <h3>{this.props.title}</h3>
+            
               <p
                 style={{
                   background: "lightskyblue",
@@ -20,24 +20,23 @@ class ContentCard extends React.Component {
                   fontSize: 15,
                 }}
               >
-                #Notes
+              
               </p>
             </Card.Title>
-            <Card.Text>
-              All you need to get started with coding in Java! IDE's, Java JDKs
-              and other useful tips.
+            <Card.Text><p>{this.props.info}</p>
+              
             </Card.Text>
             <Button
               style={{
                 background: "lightskyblue",
                 borderRadius: 10,
                 height: 40,
-                paddingBottom: 60,
+                paddingBottom: 50,
                 marginBottom: 20,
               }}
             >
-              <Link to="/ContentTest" class="nav-link">
-                Download
+              <Link to={this.props.Link} class="nav-link">
+                LEARN
               </Link>
             </Button>
             <Card

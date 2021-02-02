@@ -16,7 +16,12 @@ class Header extends React.Component{
                 <Navbar bg="light" expand="lg">
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-sm-2">
-                <Link to="/ContentJava" class="nav-link">Courses</Link>
+                <NavDropdown title="Courses" id="basic-nav-dropdown">
+        <NavDropdown.Item href="/ContentPage">Computer Science</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.2">Languages</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">Photography</NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.4">....</NavDropdown.Item>
+      </NavDropdown>
     </Nav>
 
     <Form inline>
