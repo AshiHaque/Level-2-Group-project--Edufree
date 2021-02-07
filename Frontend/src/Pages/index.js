@@ -1,5 +1,5 @@
 import React from "react";
-
+window.$userLoggedIn = "";
 const Home = () => {
   return (
     <div

@@ -37,8 +37,7 @@ public class NormalLoginService {
 		final UserDetails userDetails = userDetailsService
 				.loadUserByUsername(authenticationRequest.getUsername());
 		String jwt = jwtTokenUtil.generateToken(userDetails);
-		jwt = "yes";
-
+		jwt=authenticationRequest.getUsername();
 		return ResponseEntity.ok(new AuthenticationResponse(jwt));
 	}
 }
