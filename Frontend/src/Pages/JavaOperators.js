@@ -37,22 +37,22 @@ class ContentJava extends React.Component {
             <Row>
               <Col lg={12}>
                 <DownloadCard
-                  Title="Java - Variables"
-                  Subject="Types of Variables"
-                  Info="Learn how to make variables such as int, string and boolean"
+                  Title="Java - Operators"
+                  Subject="Arithmetic Operators"
+                  Info="Learn how Arithmetic Operators work in Java."
                   Download="/UploadFile"
                 />
                 <DownloadCard
-                  Title="Java - Variables"
-                  Subject="Displaying Variables"
-                  Info="Learn how to display variables"
+                  Title="Java - Operators"
+                  Subject="Assignment operators"
+                  Info="Learn assignment operators in Java"
                   Download="/UploadFile"
                 />
 
                 <DownloadCard
-                  Title="Java - Variables"
-                  Subject="Displaying Variables"
-                  Info="Learn how to display variables"
+                  Title="Java - Operators"
+                  Subject="Comparison Operators"
+                  Info="Learn comparison operators in Java"
                   Download="/UploadFile"
                 />
               </Col>

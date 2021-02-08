@@ -12,7 +12,7 @@ class SideBar extends React.Component {
           <Nav.Link href="/ContentJava">{this.props.Link_1}</Nav.Link>
           <Nav.Link href="/JavaDatatype">{this.props.Link_2}</Nav.Link>
           <Nav.Link href="/JavaVariables">{this.props.Link_3}</Nav.Link>
-          <Nav.Link href="link-2">{this.props.Link_4}</Nav.Link>
+          <Nav.Link href="/JavaOperators">{this.props.Link_4}</Nav.Link>
         </Nav>
       </Col>
     );

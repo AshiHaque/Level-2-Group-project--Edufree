@@ -14,6 +14,7 @@ import UploadFile from "./Pages/UploadFile";
 import ContentJava from "./Pages/ContentJava";
 import JavaDataType from "./Pages/JavaDataType";
 import JavaVariables from "./Pages/JavaVariables";
+import JavaOperators from "./Pages/JavaOperators";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -33,6 +34,8 @@ function App() {
           <Route path="/ContentJava" component={ContentJava} />
           <Route path="/ContentCSS" component={ContentCSS} />
           <Route path="/TestLoggedIn" component={TestLoggedIn} />
+          <Route path="/JavaOperators" component={JavaOperators} />
+
           <Route path="/UploadFile" component={UploadFile} />
           <Route path="/Dashboard" component={Dashboard} />
         </Switch>
