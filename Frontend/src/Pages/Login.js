@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
+import Home from "../Pages/Home";
 
 class Login extends React.Component {
   state = {
@@ -40,6 +41,9 @@ class Login extends React.Component {
       })
       .then((jwt) => {
         console.log(jwt);
+
+        //window.$userLoggedIn = jwt;
+        //console.log(window.$userLoggedIn);
       });
 
     fetch("http://localhost:8080/login", {
@@ -63,6 +67,7 @@ class Login extends React.Component {
   };
 
   render() {
+    <Home userLoggedIn={"HI"} />;
     if (this.state.redirect) {
       return <Redirect to={this.state.redirect} />;
     }

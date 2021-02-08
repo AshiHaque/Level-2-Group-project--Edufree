@@ -12,42 +12,12 @@ class DownloadCard extends React.Component {
     fileName: "",
   };
 
-  uploadFile = (event) => {
-    event.preventDefault();
-    this.setState({ error: "", msg: "" });
-
-    if (!this.state.file) {
-      this.setState({ error: "Please upload a file." });
-      return;
-    }
-
-    if (this.state.file.size >= 2000000) {
-      this.setState({ error: "File size exceeds limit of 2MB." });
-      return;
-    }
-
-    let data = new FormData();
-    data.append("file", this.state.file);
-    data.append("name", this.state.file.name);
-
-    fetch("http://localhost:8080/uploadFile", {
-      method: "POST",
-      body: data,
-    })
-      .then((response) => {
-        this.setState({ error: "", msg: "Sucessfully uploaded file" });
-      })
-      .catch((err) => {
-        console.error("Error:", err);
-      });
-  };
-
   handleChangeFileName = (event) => {
     this.setState({ fileName: event.target.value });
   };
 
-  downloadRandomImage = () => {
-    fetch("http://localhost:8080/downloadFile/" + this.state.fileName).then(
+  downloadFile = () => {
+    fetch("http://localhost:8080/downloadFile/" + this.props.fileName).then(
       (response) => {
         response.blob().then((blob) => {
           let url = window.URL.createObjectURL(blob);
@@ -66,6 +36,7 @@ class DownloadCard extends React.Component {
     });
   };
   render() {
+    console.log(this.props);
     return (
       <Card style={{ textAlign: "left", marginTop: 0 }}>
         <Card.Header>
@@ -79,7 +50,7 @@ class DownloadCard extends React.Component {
           <Card.Text>
             <p>{this.props.Info}</p>
           </Card.Text>
-          <Button href={this.props.Download} variant="primary">
+          <Button onClick={this.downloadFile} variant="primary">
             Download
           </Button>
         </Card.Body>
