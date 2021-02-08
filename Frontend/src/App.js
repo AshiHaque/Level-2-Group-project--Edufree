@@ -12,6 +12,8 @@ import Footer from "./components/Footer";
 import TestLoggedIn from "./Pages/TestLoggedIn";
 import UploadFile from "./Pages/UploadFile";
 import ContentJava from "./Pages/ContentJava";
+import JavaDataType from "./Pages/JavaDataType";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
           <Route path="/Login" component={Login} />
           <Route path="/UserInfo" component={UserInfo} />
           <Route path="/ContentPage" component={ContentPage} />
+          <Route path="/JavaDataType" component={JavaDataType} />
           <Route path="/ContentJava" component={ContentJava} />
           <Route path="/ContentCSS" component={ContentCSS} />
           <Route path="/TestLoggedIn" component={TestLoggedIn} />

@@ -37,14 +37,15 @@ class ContentJava extends React.Component {
             <Row>
               <Col lg={12}>
                 <DownloadCard
-                  Title="Java"
-                  Subject="Getting Started"
-                  Info="Information such as IDE's and Java versions to help you get started!"
+                  Title="Java - Data Types"
+                  Subject="Primative Data Types"
+                  Info="Learn data types such as int, byte, short"
                   Download="/UploadFile"
                 />
                 <DownloadCard
-                  Subject="Getting Started"
-                  Info="Information such as IDE's and Java versions to help you get started!"
+                  Title="Java - Data Types"
+                  Subject="Non-Primative Data Types"
+                  Info="Learn Java's non-primative data types such as arrays and strings!"
                   Download="/UploadFile"
                 />
               </Col>

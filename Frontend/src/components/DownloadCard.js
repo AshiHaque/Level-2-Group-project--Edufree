@@ -38,7 +38,7 @@ class DownloadCard extends React.Component {
   render() {
     console.log(this.props);
     return (
-      <Card style={{ textAlign: "left", marginTop: 0 }}>
+      <Card style={{ textAlign: "left", marginTop: 10 }}>
         <Card.Header>
           <h6>{this.props.Title}</h6>
         </Card.Header>
