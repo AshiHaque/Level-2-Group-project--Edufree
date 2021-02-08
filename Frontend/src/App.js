@@ -13,6 +13,7 @@ import TestLoggedIn from "./Pages/TestLoggedIn";
 import UploadFile from "./Pages/UploadFile";
 import ContentJava from "./Pages/ContentJava";
 import JavaDataType from "./Pages/JavaDataType";
+import JavaVariables from "./Pages/JavaVariables";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/UserInfo" component={UserInfo} />
           <Route path="/ContentPage" component={ContentPage} />
           <Route path="/JavaDataType" component={JavaDataType} />
+          <Route path="/JavaVariables" component={JavaVariables} />
           <Route path="/ContentJava" component={ContentJava} />
           <Route path="/ContentCSS" component={ContentCSS} />
           <Route path="/TestLoggedIn" component={TestLoggedIn} />
