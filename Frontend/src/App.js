@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 import TestLoggedIn from "./Pages/TestLoggedIn";
 import UploadFile from "./Pages/UploadFile";
 import ContentJava from "./Pages/ContentJava";
-import JavaDataType from "./Pages/JavaDataType";
+import JavaBasics from "./Pages/JavaBasics";
 import JavaVariables from "./Pages/JavaVariables";
 import JavaOperators from "./Pages/JavaOperators";
 
@@ -29,7 +29,7 @@ function App() {
           <Route path="/Login" component={Login} />
           <Route path="/UserInfo" component={UserInfo} />
           <Route path="/ContentPage" component={ContentPage} />
-          <Route path="/JavaDataType" component={JavaDataType} />
+          <Route path="/JavaBasics" component={JavaBasics} />
           <Route path="/JavaVariables" component={JavaVariables} />
           <Route path="/ContentJava" component={ContentJava} />
           <Route path="/ContentCSS" component={ContentCSS} />

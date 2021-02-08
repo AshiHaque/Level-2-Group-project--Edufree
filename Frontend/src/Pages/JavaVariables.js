@@ -14,7 +14,7 @@ class ContentJava extends React.Component {
           <Row>
             <SideBar
               Link_1="Getting Started"
-              Link_2="Data Types"
+              Link_2="Java Basics"
               Link_3="Variables"
               Link_4="Operators"
             />

@@ -14,7 +14,7 @@ class ContentJava extends React.Component {
           <Row>
             <SideBar
               Link_1="Getting Started"
-              Link_2="Data Types"
+              Link_2="Java Basics"
               Link_3="Variables"
               Link_4="Operators"
             />
@@ -36,6 +36,7 @@ class ContentJava extends React.Component {
           <Container className="ContentContbainer">
             <Row>
               <Col lg={12}>
+                <h1>Data Types </h1>
                 <DownloadCard
                   Title="Java - Data Types"
                   Subject="Primative Data Types"
@@ -46,6 +47,46 @@ class ContentJava extends React.Component {
                   Title="Java - Data Types"
                   Subject="Non-Primative Data Types"
                   Info="Learn Java's non-primative data types such as arrays and strings!"
+                  Download="/UploadFile"
+                />
+                <h1>Variables</h1>
+                <DownloadCard
+                  Title="Java - Variables"
+                  Subject="Types of Variables"
+                  Info="Learn how to make variables such as int, string and boolean"
+                  Download="/UploadFile"
+                />
+                <DownloadCard
+                  Title="Java - Variables"
+                  Subject="Displaying Variables"
+                  Info="Learn how to display variables"
+                  Download="/UploadFile"
+                />
+
+                <DownloadCard
+                  Title="Java - Variables"
+                  Subject="Displaying Variables"
+                  Info="Learn how to display variables"
+                  Download="/UploadFile"
+                />
+                <h1>Operators</h1>
+                <DownloadCard
+                  Title="Java - Operators"
+                  Subject="Arithmetic Operators"
+                  Info="Learn how Arithmetic Operators work in Java."
+                  Download="/UploadFile"
+                />
+                <DownloadCard
+                  Title="Java - Operators"
+                  Subject="Assignment operators"
+                  Info="Learn assignment operators in Java"
+                  Download="/UploadFile"
+                />
+
+                <DownloadCard
+                  Title="Java - Operators"
+                  Subject="Comparison Operators"
+                  Info="Learn comparison operators in Java"
                   Download="/UploadFile"
                 />
               </Col>
