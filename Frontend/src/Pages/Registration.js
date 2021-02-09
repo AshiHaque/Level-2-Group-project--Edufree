@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import EmailLogo from "../images/EmailLogo.png";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
+import GitHubLogin from 'react-github-login';
 
 class Registration extends React.Component {
   render() {
@@ -14,6 +15,9 @@ class Registration extends React.Component {
     const responseFacebook = (response) => {
       console.log(response);
     };
+
+    const onSuccess = response => console.log(response);
+    const onFailure = response => console.error(response);
 
     return (
       <div>
@@ -67,6 +71,17 @@ class Registration extends React.Component {
                   cookiePolicy={"single_host_origin"}
                 />
               </button>
+
+              <button type="button" className="btn btn-outline-primary">
+
+                <GitHubLogin clientId="ce4d254cd12e108f97e0"
+                  onSuccess={onSuccess}
+                  onFailure={onFailure} />
+              </button>
+
+
+
+
               <button type="button" className="btn btn-outline-primary">
                 <FacebookLogin
                   appId="700968853829126"
