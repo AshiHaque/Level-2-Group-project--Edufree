@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import Home from "../Pages/Home";
+import Cookies from "js-cookie";
 
 class Login extends React.Component {
   state = {
@@ -41,9 +42,9 @@ class Login extends React.Component {
       })
       .then((jwt) => {
         console.log(jwt);
-
+        Cookies.set("user", jwt);
         //window.$userLoggedIn = jwt;
-        //console.log(window.$userLoggedIn);
+        console.log(Cookies.get("user"));
       });
 
     fetch("http://localhost:8080/login", {

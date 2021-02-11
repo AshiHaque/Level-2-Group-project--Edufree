@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Cookies from "js-cookie";
 
 function NavLoggedIn() {
   return (
@@ -131,16 +132,16 @@ function NavGuest() {
 
 class Header extends React.Component {
   render() {
-    while (this.props.userLoggedIn != "") {
+    while (Cookies.get("user") == "jwt:zafir") {
       return (
         <div>
-          <NavLoggedIn />
+          <NavGuest />
         </div>
       );
     }
     return (
       <div>
-        <NavGuest />
+        <NavLoggedIn />
       </div>
     );
   }
