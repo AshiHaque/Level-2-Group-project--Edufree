@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,7 @@ public class FileController {
 	private FileStorageService fileStorageService;
 	@CrossOrigin("http://localhost:3000")
 	@PostMapping("/uploadFile")
-	public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
+	public ResponseEntity<UploadFileResponse> uploadFile(@RequestParam("file") MultipartFile file) {
 		String fileName = new String();
 		try {
 			fileName = fileStorageService.storeFile(file);
@@ -45,11 +46,10 @@ public class FileController {
 				.path("/downloadFile/")
 				.path(fileName)
 				.toUriString();
-
-		return new UploadFileResponse(fileName, fileDownloadUri,
-				file.getContentType(), file.getSize());
+		return ResponseEntity.status(HttpStatus.OK).body( new UploadFileResponse(fileName, fileDownloadUri,
+				file.getContentType(), file.getSize()));
 	}
-//If we want to upload more files..
+	//If we want to upload more files..
 	/*@PostMapping("/uploadMultipleFiles")
 	public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
 		return Arrays.asList(files)
@@ -57,7 +57,7 @@ public class FileController {
 				.map(file -> uploadFile(file))
 				.collect(Collectors.toList());
 	}*/
-@CrossOrigin("http://localhost:3000")
+	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/downloadFile/{fileName:.+}")
 	public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
 		// Load file as Resource

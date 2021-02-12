@@ -6,6 +6,9 @@ import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
+
+import group4.EduFree.userdetails.UserDetailsRepository;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
@@ -17,6 +20,9 @@ import java.nio.file.StandardCopyOption;
 public class FileStorageService {
 
 	private final Path fileStorageLocation;
+	
+	@Autowired
+	private FileEntityRepository fileEntityRepository;
 
 	@Autowired
 	public FileStorageService(FileStorageProperties fileStorageProperties) throws FileStorageException {
@@ -39,6 +45,8 @@ public class FileStorageService {
 			if(fileName.contains("..")) {
 				throw new FileStorageException("Sorry! Filename contains invalid path sequence " + fileName);
 			}
+			FileEntityDetails fileEntityDetails = new FileEntityDetails(file);
+			fileEntityRepository.save(fileEntityDetails);
 
 			// Copy file to the target location (Replacing existing file with the same name)
 			Path targetLocation = this.fileStorageLocation.resolve(fileName);

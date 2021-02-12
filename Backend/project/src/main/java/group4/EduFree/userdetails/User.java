@@ -19,7 +19,7 @@ public class User {
 	private String institution;
 	private boolean active;
 	private String roles;
-	
+	private String favourites;
 	
 	public long getId() {
 		return id;
@@ -80,6 +80,12 @@ public class User {
 	}
 	public void setInstitution(String institution) {
 		this.roles = institution;
+	}
+	public String getFavourites() {
+		return favourites;
+	}
+	public void setFavourites(String favourites) {
+		this.favourites = favourites;
 	}
 	
 }

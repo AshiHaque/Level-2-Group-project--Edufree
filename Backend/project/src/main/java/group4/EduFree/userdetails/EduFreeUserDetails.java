@@ -9,7 +9,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class EduFreeUserDetails implements UserDetails {
+public class EduFreeUserDetails extends User implements UserDetails {
 	private String userName;
 	private String password;
 	private boolean active;
