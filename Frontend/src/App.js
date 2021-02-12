@@ -15,8 +15,13 @@ import ContentJava from "./Pages/ContentJava";
 import JavaBasics from "./Pages/JavaBasics";
 import JavaVariables from "./Pages/JavaVariables";
 import JavaOperators from "./Pages/JavaOperators";
-
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from "react-router-dom";
+import { Component } from "react";
 
 function App() {
   return (
@@ -35,7 +40,6 @@ function App() {
           <Route path="/ContentCSS" component={ContentCSS} />
           <Route path="/TestLoggedIn" component={TestLoggedIn} />
           <Route path="/JavaOperators" component={JavaOperators} />
-
           <Route path="/UploadFile" component={UploadFile} />
           <Route path="/Dashboard" component={Dashboard} />
         </Switch>
@@ -45,5 +49,17 @@ function App() {
     </div>
   );
 }
+
+const ProtectedRoute = ({ component: Comp, Dashboard, path, ...rest }) => {
+  return (
+    <Route
+      path={path}
+      {...rest}
+      render={(props) => {
+        return Dashboard ? <Comp {...props} /> : <Redirect to="/" />;
+      }}
+    />
+  );
+};
 
 export default App;

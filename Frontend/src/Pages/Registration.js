@@ -1,10 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
-import EmailLogo from "../images/EmailLogo.png";
 import { GoogleLogin } from "react-google-login";
 import FacebookLogin from "react-facebook-login";
-import GitHubLogin from 'react-github-login';
+import GitHubLogin from "react-github-login";
 
 class Registration extends React.Component {
   render() {
@@ -16,8 +15,8 @@ class Registration extends React.Component {
       console.log(response);
     };
 
-    const onSuccess = response => console.log(response);
-    const onFailure = response => console.error(response);
+    const onSuccess = (response) => console.log(response);
+    const onFailure = (response) => console.error(response);
 
     return (
       <div>
@@ -73,14 +72,12 @@ class Registration extends React.Component {
               </button>
 
               <button type="button" className="btn btn-outline-primary">
-
-                <GitHubLogin clientId="ce4d254cd12e108f97e0"
+                <GitHubLogin
+                  clientId="ce4d254cd12e108f97e0"
                   onSuccess={onSuccess}
-                  onFailure={onFailure} />
+                  onFailure={onFailure}
+                />
               </button>
-
-
-
 
               <button type="button" className="btn btn-outline-primary">
                 <FacebookLogin
