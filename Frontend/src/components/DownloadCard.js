@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import clipboard from "../images/clipboard.png";
 import { Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class DownloadCard extends React.Component {
@@ -50,7 +48,7 @@ class DownloadCard extends React.Component {
           <Card.Text>
             <p>{this.props.Info}</p>
           </Card.Text>
-          <Button onClick={this.downloadFile} variant="primary">
+          <Button onClick={this.props.fileName} variant="primary">
             Download
           </Button>
         </Card.Body>

@@ -37,9 +37,9 @@ class ContentJava extends React.Component {
             <Row>
               <Col lg={12}>
                 <DownloadCard
-                  Title="Java"
-                  Subject="Getting Started"
-                  Info="Information such as IDE's and Java versions to help you get started!"
+                  Title={this.props.title}
+                  Subject={this.props.subject}
+                  Info={this.props.info}
                   Download="/UploadFile"
                 />
                 <DownloadCard
@@ -55,4 +55,5 @@ class ContentJava extends React.Component {
     );
   }
 }
+
 export default ContentJava;

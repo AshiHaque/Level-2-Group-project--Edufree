@@ -1,8 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import clipboard from "../images/clipboard.png";
 import { Container, Row, Col, Nav, Button, Card } from "react-bootstrap";
 import ContentJava from "./ContentJava";
+import DownloadCard from "../components/DownloadCard";
 
 class Content extends React.Component {
   state = {
@@ -16,7 +16,7 @@ class Content extends React.Component {
   };
 
   handleChangeTitle = (event) => {
-    this.setState({ filename: event.target.value });
+    this.setState({ title: event.target.value });
   };
 
   handleChangeSubject = (event) => {
@@ -58,12 +58,6 @@ class Content extends React.Component {
       body: data,
     })
       .then((response) => {
-        <ContentJava
-          title="HI"
-          subject={this.state.subject}
-          description={this.state.description}
-          fileName={this.state.fileName}
-        />;
         this.setState({ error: "", msg: "Sucessfully uploaded file" });
       })
       .catch((err) => {
@@ -84,6 +78,12 @@ class Content extends React.Component {
   render() {
     return (
       <div>
+        <ContentJava
+          title={this.state.title}
+          subject={this.state.subject}
+          info={this.state.description}
+          fileName={this.state.fileName}
+        />
         <div className>
           <h3>Upload a file</h3>
           <h4 style={{ color: "red" }}>{this.state.error}</h4>
@@ -111,6 +111,7 @@ class Content extends React.Component {
           />
           <input onChange={this.onFileChange} type="file"></input>
           <button onClick={this.uploadFile}>Upload</button>
+          <button onClick={this.handleClick}>Refresh</button>
         </div>
       </div>
     );
