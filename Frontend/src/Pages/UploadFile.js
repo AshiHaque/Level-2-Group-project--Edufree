@@ -53,6 +53,26 @@ class Content extends React.Component {
     data.append("file", this.state.file);
     data.append("name", this.state.file.name);
 
+    const fileInfo = {
+      title,
+      subject,
+      description,
+    };
+
+    fetch("http://localhost:8080/file_entity_details", {
+      method: "POST",
+      body: JSON.stringify(fileInfo),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        window.alert("Your account is created!");
+        this.setState({ redirect: "/" });
+        console.log("User Registered");
+      })
+      .catch((error) => console.error("Error:", error));
+
     fetch("http://localhost:8080/uploadFile", {
       method: "POST",
       body: data,
@@ -78,12 +98,6 @@ class Content extends React.Component {
   render() {
     return (
       <div>
-        <ContentJava
-          title={this.state.title}
-          subject={this.state.subject}
-          info={this.state.description}
-          fileName={this.state.fileName}
-        />
         <div className>
           <h3>Upload a file</h3>
           <h4 style={{ color: "red" }}>{this.state.error}</h4>

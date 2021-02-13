@@ -42,11 +42,6 @@ class ContentJava extends React.Component {
                   Info={this.props.info}
                   Download="/UploadFile"
                 />
-                <DownloadCard
-                  Subject="Getting Started"
-                  Info="Information such as IDE's and Java versions to help you get started!"
-                  Download="/UploadFile"
-                />
               </Col>
             </Row>
           </Container>

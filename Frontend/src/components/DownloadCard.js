@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
 class DownloadCard extends React.Component {
   state = {
@@ -8,14 +9,15 @@ class DownloadCard extends React.Component {
     error: "",
     msg: "",
     fileName: "",
+    url: "",
   };
 
   handleChangeFileName = (event) => {
     this.setState({ fileName: event.target.value });
   };
 
-  downloadFile = () => {
-    fetch("http://localhost:8080/downloadFile/" + this.props.fileName).then(
+  downloadFile = (contentName) => {
+    fetch("http://localhost:8080/downloadFile/" + contentName).then(
       (response) => {
         response.blob().then((blob) => {
           let url = window.URL.createObjectURL(blob);
@@ -28,32 +30,50 @@ class DownloadCard extends React.Component {
     );
   };
 
+  constructor(state) {
+    super(state);
+    this.state = {
+      contentCard: [],
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get("http://localhost:8080/getContent")
+      .then((response) => response.data)
+      .then((data) => {
+        this.setState({ contentCard: data.content });
+      });
+  }
+
   onFileChange = (event) => {
     this.setState({
       file: event.target.files[0],
     });
   };
   render() {
-    console.log(this.props);
-    return (
+    return this.state.contentCard.map((content) => (
       <Card style={{ textAlign: "left", marginTop: 10 }}>
         <Card.Header>
-          <h6>{this.props.Title}</h6>
+          <h6>{content.name}</h6>
         </Card.Header>
         <Card.Body>
           <Card.Title>
             {" "}
-            <h5>{this.props.Subject}</h5>
+            <h5>{content.type}</h5>
           </Card.Title>
           <Card.Text>
-            <p>{this.props.Info}</p>
+            <p>{this.state.Info}</p>
           </Card.Text>
-          <Button onClick={this.props.fileName} variant="primary">
+          <Button
+            onClick={this.downloadFile.bind(this, content.name)}
+            variant="primary"
+          >
             Download
           </Button>
         </Card.Body>
       </Card>
-    );
+    ));
   }
 }
 
