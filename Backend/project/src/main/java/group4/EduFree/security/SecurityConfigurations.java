@@ -34,8 +34,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 			.antMatchers("/register").permitAll()
 			.antMatchers("/register/{id}").permitAll()
 			.antMatchers("/uploadFile").permitAll()
+			.antMatchers("/getContent").permitAll()
 			.antMatchers("/downloadFile/{fileName:.+}").permitAll()
-			.antMatchers("/*").permitAll()
+			.antMatchers("/**").permitAll()
 			.anyRequest().authenticated();
 	}
 	

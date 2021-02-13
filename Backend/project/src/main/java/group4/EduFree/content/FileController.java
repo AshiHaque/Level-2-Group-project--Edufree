@@ -32,6 +32,8 @@ public class FileController {
 
 	@Autowired
 	private FileStorageService fileStorageService;
+	@Autowired
+	private FileEntityRepository fileEntityRepository;
 	@CrossOrigin("http://localhost:3000")
 	@PostMapping("/uploadFile")
 	public ResponseEntity<UploadFileResponse> uploadFile(@RequestParam("file") MultipartFile file) {
@@ -80,5 +82,10 @@ public class FileController {
 				.contentType(MediaType.parseMediaType(contentType))
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
 				.body(resource);
+	}
+	@CrossOrigin("http://localhost:3000")
+	@GetMapping("/getContent")
+	public ResponseEntity<DownloadFileResponse> getAll() {
+		return ResponseEntity.status(HttpStatus.OK).body(new DownloadFileResponse(fileEntityRepository.findAll()));
 	}
 }
