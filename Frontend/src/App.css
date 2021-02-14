@@ -14,10 +14,12 @@ h1 {
   font-size: 50px;
   font-weight: bolder;
 }
-
+#studentpic {
+  margin-left: 1000 px;
+}
 #maininfo {
   padding-left: 50px;
-  text-align: left;
+  text-align: center;
   font-family: "Montserrat";
   font-size: 35px;
 }
@@ -25,6 +27,7 @@ h1 {
   font-family: "Montserrat";
   font-weight: bolder;
   font-size: 30px;
+  text-align: center;
   color: #0077c7;
 }
 
@@ -61,6 +64,15 @@ h3 {
 .nav-item {
   padding: 0 18px;
   color: #0077c7;
+}
+
+#learnbutton {
+  margin-top: 20px;
+  margin-left: 300px;
+}
+#teachbutton {
+  margin-top: 20px;
+  margin-left: 50px;
 }
 /*
 CONTENT PAGE
@@ -159,6 +171,7 @@ CONTENT PAGE
 
 #slogan {
   font-size: 65px;
+  text-align: center;
   font-family: "Montserrat";
 }
 
