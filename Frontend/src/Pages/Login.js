@@ -45,6 +45,7 @@ class Login extends React.Component {
         Cookies.set("user", jwt);
         //window.$userLoggedIn = jwt;
         console.log(Cookies.get("user"));
+        window.location.reload(false);
       });
 
     fetch("http://localhost:8080/login", {
@@ -58,7 +59,7 @@ class Login extends React.Component {
         if (res.ok) {
           // if HTTP-status is 200-299
           // get the response body (the method explained below)
-          this.setState({ redirect: "/TestLoggedIn" });
+          window.alert("You've successfully logged In!");
           console.log("User Logged In");
         } else {
           console.log("Error");
