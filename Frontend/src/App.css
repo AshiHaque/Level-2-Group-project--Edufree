@@ -14,11 +14,18 @@ h1 {
   font-size: 50px;
   font-weight: bolder;
 }
+.homeContainer {
+  margin-top: 100px;
+}
+.LearnContainer {
+  margin-top: 200px;
+}
 #studentpic {
   margin-left: 1000 px;
 }
 #maininfo {
   padding-left: 50px;
+  padding-top: 50px;
   text-align: center;
   font-family: "Montserrat";
   font-size: 35px;
@@ -29,6 +36,10 @@ h1 {
   font-size: 30px;
   text-align: center;
   color: #0077c7;
+}
+
+#ecosystem {
+  padding-right: 50px;
 }
 
 .choice {
