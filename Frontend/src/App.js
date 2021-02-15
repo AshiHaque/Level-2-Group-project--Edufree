@@ -15,8 +15,6 @@ import ContentJava from "./Pages/ContentJava";
 import JavaBasics from "./Pages/JavaBasics";
 import JavaVariables from "./Pages/JavaVariables";
 import JavaOperators from "./Pages/JavaOperators";
-import UserProfile from "./Pages/UserProfile";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -33,7 +31,6 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Registration" component={Registration} />
-          <Route path="/UserProfile" component={UserProfile} />
           <Route path="/Login" component={Login} />
           <Route path="/UserInfo" component={UserInfo} />
           <Route path="/ContentPage" component={ContentPage} />

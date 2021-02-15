@@ -1,20 +1,21 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import ecosystem from "../images/Ecosystem.PNG";
+import students from "../images/STUDENT-IMM.png";
 
 class learn extends React.Component {
   render() {
+    console.log(this.props.userLoggedIn);
     return (
       <div>
         <Container className="homeContainer" fluid>
           <div class="row">
             <div class="col-6">
               <img
-                src={ecosystem}
-                width="1000"
+                src={students}
+                width="2000"
                 height="500"
-                id="ecosystem"
-                alt="ecosystem picture"
+                id="studentpic"
+                alt="student picture"
               ></img>
             </div>
             <div class="col-6">
@@ -23,10 +24,8 @@ class learn extends React.Component {
                 Made for Students,by Students
               </h1>
               <p id="maininfo">
-                Take full advantage of our learning resources which have been created by trusted
-                educators and students here on our platform!
-                
-                <p id="maininfo">Once you have mastered a subject, feel free to register as a educator to teach others.</p>
+                A platform where anyone can learn for free, with endless
+                resources available to support every student.
               </p>
               <p id="howDoesItWork">
                 <em>How does it work?</em>

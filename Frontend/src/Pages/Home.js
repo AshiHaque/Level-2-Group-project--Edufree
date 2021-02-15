@@ -1,8 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import students from "../images/STUDENT-IMM.png";
-import ecosystem from "../images/Ecosystem.PNG";
 
 class Home extends React.Component {
   render() {
@@ -38,11 +36,7 @@ class Home extends React.Component {
                 id="learnbutton"
                 class="btn btn-primary btn-lg"
               >
-                <Link to="/Learn" class="nav-link">
                 Learn
-                
-
-                </Link>
               </button>
               <button
                 size="lg"
@@ -54,40 +48,8 @@ class Home extends React.Component {
               </button>
             </div>
           </div>
-          </Container>
-
-          <Container className="LearnContainer" fluid>
-          <div class="row">
-            <div class="col-6">
-              <img
-                src={ecosystem}
-                width="1000"
-                height="500"
-                id="ecosystem"
-                alt="ecosystem picture"
-              ></img>
-            </div>
-            <div class="col-6">
-              <h1 class="title" id="slogan">
-                {" "}
-                Made for Students,by Students
-              </h1>
-              <p id="maininfo">
-                Take full advantage of our learning resources which have been created by trusted
-                educators and students here on our platform!
-                
-                <p id="maininfo">Once you have mastered a subject, feel free to register as a educator to teach others.</p>
-              </p>
-              <p id="howDoesItWork">
-                <em>How does it work?</em>
-              </p>
-              </div>
-          </div>
         </Container>
       </div>
-     
-
-      
     );
   }
 }
