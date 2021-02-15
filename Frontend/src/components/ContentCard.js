@@ -8,23 +8,22 @@ class ContentCard extends React.Component {
   render() {
     return (
       <div class="m-4">
-        <Card style={{ width: "18rem", borderRadius: 50,}}>
+        <Card style={{ width: "18rem", borderRadius: 50 }}>
           <Card.Img variant="top" src={clipboard} />
           <Card.Body>
-            <Card.Title> <h3>{this.props.title}</h3>
-            
+            <Card.Title>
+              {" "}
+              <h3>{this.props.title}</h3>
               <p
                 style={{
                   background: "lightskyblue",
                   borderRadius: 50,
                   fontSize: 15,
                 }}
-              >
-              
-              </p>
+              ></p>
             </Card.Title>
-            <Card.Text><p>{this.props.info}</p>
-              
+            <Card.Text>
+              <p>{this.props.info}</p>
             </Card.Text>
             <Button
               style={{
@@ -45,12 +44,6 @@ class ContentCard extends React.Component {
             >
               @Team EduFree
             </Card>
-            <input
-              class="star"
-              id="starContent"
-              type="checkbox"
-              title="bookmark page"
-            ></input>
           </Card.Body>
         </Card>
       </div>
