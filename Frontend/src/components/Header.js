@@ -65,6 +65,10 @@ function NavLoggedIn() {
               <Link to="/Login" class="nav-link">
                 Sign In
               </Link>
+              <Link to="/UserProfile" class="nav-link">
+                Profile 
+              </Link>
+              
             </Nav>
           </Navbar.Collapse>
         </Navbar>

@@ -14,18 +14,11 @@ h1 {
   font-size: 50px;
   font-weight: bolder;
 }
-.homeContainer {
-  margin-top: 100px;
-}
-.LearnContainer {
-  margin-top: 200px;
-}
 #studentpic {
   margin-left: 1000 px;
 }
 #maininfo {
   padding-left: 50px;
-  padding-top: 50px;
   text-align: center;
   font-family: "Montserrat";
   font-size: 35px;
@@ -36,10 +29,6 @@ h1 {
   font-size: 30px;
   text-align: center;
   color: #0077c7;
-}
-
-#ecosystem {
-  padding-right: 50px;
 }
 
 .choice {
@@ -271,3 +260,61 @@ CONTENT PAGE
     max-width: 100% !important;
   }
 }
+body {
+  background-color: #efefef;
+}
+
+.profile-pic {
+  /* top:400px;
+  right:1000px; */
+  max-width: 200px;
+  max-height: 200px;
+  display: block;
+}
+
+.file-upload {
+  display: none;
+}
+
+.circle {
+  border-radius: 1000px !important;
+  overflow: hidden;
+  margin-top:110px;
+  width: 128px;
+  height: 128px;
+  border: 8px solid rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 0px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.p-image {
+  position: absolute;
+  top: 235px;
+  right: 1140px;
+  color: #666666;
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.upload-button {
+  font-size: 1.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
+
+.myForm {
+  margin-top: 170px;
+  margin-right: 200px;
+}
+
