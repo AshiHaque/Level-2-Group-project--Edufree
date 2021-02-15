@@ -70,6 +70,10 @@ function NavLoggedIn() {
               <Link to="/" class="nav-link" onClick={handleClick}>
                 Log Out
               </Link>
+              <Link to="/UserProfile" class="nav-link">
+                Profile 
+              </Link>
+              
             </Nav>
           </Navbar.Collapse>
         </Navbar>
