@@ -15,7 +15,7 @@ import ContentJava from "./Pages/ContentJava";
 import JavaBasics from "./Pages/JavaBasics";
 import JavaVariables from "./Pages/JavaVariables";
 import JavaOperators from "./Pages/JavaOperators";
-import Learn from "./Pages/Learn";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -31,7 +31,6 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/Learn" component={Learn} />
           <Route path="/Registration" component={Registration} />
           <Route path="/Login" component={Login} />
           <Route path="/UserInfo" component={UserInfo} />

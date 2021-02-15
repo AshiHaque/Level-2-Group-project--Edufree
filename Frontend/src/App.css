@@ -15,10 +15,13 @@ h1 {
   font-weight: bolder;
 }
 .homeContainer {
-  margin-top: 100px;
+  margin-top: 120px;
 }
 .LearnContainer {
-  margin-top: 200px;
+  margin-top: 250px;
+}
+.TeachContainer {
+  margin-top: 250px;
 }
 #studentpic {
   margin-left: 1000 px;
@@ -78,17 +81,17 @@ h3 {
 }
 
 #learnbutton {
+  position: absolute;
   margin-top: 20px;
-  margin-left: 300px;
+  margin-left: 350px;
 }
 #teachbutton {
+  position: absolute;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 500px;
 }
-/*
-CONTENT PAGE
-*/
-.nav-link {
+
+CONTENT PAGE */ .nav-link {
   font-size: 1.2rem;
   font-family: "Montserrat";
   color: #0077c7;
