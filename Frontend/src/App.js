@@ -9,12 +9,14 @@ import Dashboard from "./Pages/Dashboard";
 import UserInfo from "./Pages/UserInfo";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import TestLoggedIn from "./Pages/TestLoggedIn";
 import UploadFile from "./Pages/UploadFile";
 import ContentJava from "./Pages/ContentJava";
 import JavaBasics from "./Pages/JavaBasics";
 import JavaVariables from "./Pages/JavaVariables";
 import JavaOperators from "./Pages/JavaOperators";
+import UserProfile from "./Pages/UserProfile";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Cookies from "js-cookie";
 
 import {
   BrowserRouter as Router,
@@ -22,7 +24,6 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-import { Component } from "react";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/Registration" component={Registration} />
+          <Route path="/UserProfile" component={UserProfile} />
           <Route path="/Login" component={Login} />
           <Route path="/UserInfo" component={UserInfo} />
           <Route path="/ContentPage" component={ContentPage} />
@@ -39,12 +41,10 @@ function App() {
           <Route path="/JavaVariables" component={JavaVariables} />
           <Route path="/ContentJava" component={ContentJava} />
           <Route path="/ContentCSS" component={ContentCSS} />
-          <Route path="/TestLoggedIn" component={TestLoggedIn} />
           <Route path="/JavaOperators" component={JavaOperators} />
           <Route path="/UploadFile" component={UploadFile} />
-          <Route path="/Dashboard" component={Dashboard} />
+          <ProtectedRoute path="/Dashboard" component={Dashboard} />
         </Switch>
-
         <Footer />
       </Router>
     </div>
@@ -53,13 +53,21 @@ function App() {
 
 const ProtectedRoute = ({ component: Comp, Dashboard, path, ...rest }) => {
   return (
-    <Route
-      path={path}
-      {...rest}
-      render={(props) => {
-        return Dashboard ? <Comp {...props} /> : <Redirect to="/" />;
-      }}
-    />
+    console.log(Cookies.get("user")),
+    (
+      <Route
+        path={path}
+        {...rest}
+        render={(Dashboard) => {
+          return Cookies.get("user") === null ||
+            Cookies.get("user") === undefined ? (
+            (window.alert("Please Log In"), (<Redirect to="/Login" />))
+          ) : (
+            <Comp {...Dashboard} />
+          );
+        }}
+      />
+    )
   );
 };
 

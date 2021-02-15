@@ -1,22 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
-import { GoogleLogin } from "react-google-login";
-import FacebookLogin from "react-facebook-login";
-import GitHubLogin from "react-github-login";
+
 
 class Registration extends React.Component {
   render() {
-    const responseGoogle = (response) => {
-      console.log(response);
-    };
-
-    const responseFacebook = (response) => {
-      console.log(response);
-    };
-
-    const onSuccess = (response) => console.log(response);
-    const onFailure = (response) => console.error(response);
 
     return (
       <div>
@@ -56,54 +44,26 @@ class Registration extends React.Component {
                 Educator
               </button>
             </ul>
-            <div
-              className="btn-group-vertical"
-              role="group"
-              aria-label="Basic example"
-            >
-              <button type="button" className="btn btn-outline-primary">
-                <GoogleLogin
-                  clientId="104419111985-q5kvvf8bh6pu6fb215864qsdni9mt07h.apps.googleusercontent.com"
-                  buttonText="Login"
-                  onSuccess={responseGoogle}
-                  onFailure={responseGoogle}
-                  cookiePolicy={"single_host_origin"}
-                />
-              </button>
-
-              <button type="button" className="btn btn-outline-primary">
-                <GitHubLogin
-                  clientId="ce4d254cd12e108f97e0"
-                  onSuccess={onSuccess}
-                  onFailure={onFailure}
-                />
-              </button>
-
-              <button type="button" className="btn btn-outline-primary">
-                <FacebookLogin
-                  appId="700968853829126"
-                  autoLoad={false}
-                  fields="name,email,picture"
-                  onClick={responseFacebook}
-                  callback={responseFacebook}
-                />
-              </button>
-              <button type="button" className="btn btn-outline-primary">
+            <ul className="continueWith">
+            <button
+              type="button"
+              className="btn btn-outline-primary btn-lg"
+              >
                 {" "}
                 <Link to="/UserInfo" class="nav-link">
                   Continue with Email
                 </Link>
-              </button>
-            </div>
+            </button>
+            </ul>
             <p id="member">
               <em>Already a member?</em>
               <Link to="/Login" class="nav-link">
                 Sign In
               </Link>
             </p>
+            </div>
           </div>
         </div>
-      </div>
     );
   }
 }

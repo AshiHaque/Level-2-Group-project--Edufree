@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import logo from "../images/LogoFull.png";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -8,8 +8,13 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Cookies from "js-cookie";
-
 function NavLoggedIn() {
+  function handleClick(e) {
+    e.preventDefault();
+    Cookies.remove("user");
+    window.location.reload(false);
+  }
+
   return (
     <div>
       <header>
@@ -62,9 +67,13 @@ function NavLoggedIn() {
               </Link>
 
               <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
-              <Link to="/Login" class="nav-link">
-                Sign In
+              <Link to="/" class="nav-link" onClick={handleClick}>
+                Log Out
               </Link>
+              <Link to="/UserProfile" class="nav-link">
+                Profile 
+              </Link>
+              
             </Nav>
           </Navbar.Collapse>
         </Navbar>
@@ -132,17 +141,10 @@ function NavGuest() {
 
 class Header extends React.Component {
   render() {
-    while (Cookies.get("user") == "jwt:zafir") {
-      return (
-        <div>
-          <NavGuest />
-        </div>
-      );
-    }
-    return (
-      <div>
-        <NavLoggedIn />
-      </div>
+    return Cookies.get("user") === null || Cookies.get("user") === undefined ? (
+      <NavGuest />
+    ) : (
+      <NavLoggedIn />
     );
   }
 }

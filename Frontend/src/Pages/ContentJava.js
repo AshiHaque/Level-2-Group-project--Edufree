@@ -36,12 +36,7 @@ class ContentJava extends React.Component {
           <Container className="ContentContbainer">
             <Row>
               <Col lg={12}>
-                <DownloadCard
-                  Title={this.props.title}
-                  Subject={this.props.subject}
-                  Info={this.props.info}
-                  Download="/UploadFile"
-                />
+                <DownloadCard />
               </Col>
             </Row>
           </Container>
