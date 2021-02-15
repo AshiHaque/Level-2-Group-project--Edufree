@@ -9,19 +9,19 @@ import Dashboard from "./Pages/Dashboard";
 import UserInfo from "./Pages/UserInfo";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import TestLoggedIn from "./Pages/TestLoggedIn";
 import UploadFile from "./Pages/UploadFile";
 import ContentJava from "./Pages/ContentJava";
 import JavaBasics from "./Pages/JavaBasics";
 import JavaVariables from "./Pages/JavaVariables";
 import JavaOperators from "./Pages/JavaOperators";
+import UserProfile from "./Pages/UserProfile";
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
 } from "react-router-dom";
-import { Component } from "react";
+import Cookies from "js-cookie";
 
 function App() {
   return (
@@ -38,10 +38,10 @@ function App() {
           <Route path="/JavaVariables" component={JavaVariables} />
           <Route path="/ContentJava" component={ContentJava} />
           <Route path="/ContentCSS" component={ContentCSS} />
-          <Route path="/TestLoggedIn" component={TestLoggedIn} />
           <Route path="/JavaOperators" component={JavaOperators} />
-          <Route path="/UploadFile" component={UploadFile} />
-          <Route path="/Dashboard" component={Dashboard} />
+          <ProtectedRoute path="/UserProfile" component={UserProfile} />
+          <ProtectedRoute path="/UploadFile" component={UploadFile} />
+          <ProtectedRoute path="/Dashboard" component={Dashboard} />
         </Switch>
 
         <Footer />
@@ -50,15 +50,58 @@ function App() {
   );
 }
 
-const ProtectedRoute = ({ component: Comp, Dashboard, path, ...rest }) => {
+const ProtectedRoute = ({
+  component: Comp,
+  Dashboard,
+  UploadFile,
+  UserProfile,
+  path,
+  ...rest
+}) => {
   return (
-    <Route
-      path={path}
-      {...rest}
-      render={(props) => {
-        return Dashboard ? <Comp {...props} /> : <Redirect to="/" />;
-      }}
-    />
+    console.log(Cookies.get("user")),
+    ((
+      <Route
+        path={path}
+        {...rest}
+        render={(Dashboard) => {
+          return Cookies.get("user") === null ||
+            Cookies.get("user") === undefined ? (
+            (window.alert("Please Log In"), (<Redirect to="/Login" />))
+          ) : (
+            <Comp {...Dashboard} />
+          );
+        }}
+      />
+    ),
+    (
+      <Route
+        path={path}
+        {...rest}
+        render={(UploadFile) => {
+          return Cookies.get("user") === null ||
+            Cookies.get("user") === undefined ? (
+            (window.alert("Please Log In"), (<Redirect to="/Login" />))
+          ) : (
+            <Comp {...UploadFile} />
+          );
+        }}
+      />
+    ),
+    (
+      <Route
+        path={path}
+        {...rest}
+        render={(UserProfile) => {
+          return Cookies.get("user") === null ||
+            Cookies.get("user") === undefined ? (
+            (window.alert("Please Log In"), (<Redirect to="/Login" />))
+          ) : (
+            <Comp {...UserProfile} />
+          );
+        }}
+      />
+    ))
   );
 };
 

@@ -8,9 +8,11 @@ import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Cookies from "js-cookie";
+
 function NavLoggedIn() {
   function handleClick(e) {
     e.preventDefault();
+    <Redirect to="/Home" />;
     Cookies.remove("user");
     window.location.reload(false);
   }
@@ -67,6 +69,9 @@ function NavLoggedIn() {
               </Link>
 
               <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
+              <Link to="/UserProfile" class="nav-link">
+                Profile
+              </Link>
               <Link to="/" class="nav-link" onClick={handleClick}>
                 Log Out
               </Link>

@@ -15,25 +15,10 @@ class Dashboard extends React.Component {
               <em>Favourites</em>
             </p>
           </Col>
-          <Row>
-            <Col lg={4}>
-              <div class="m-2">
-                <DownloadCard />
-              </div>
-            </Col>
 
-            <Col lg={4}>
-              <div class="m-2">
-                <DownloadCard />
-              </div>
-            </Col>
-
-            <Col lg={4}>
-              <div class="m-2">
-                <DownloadCard />
-              </div>
-            </Col>
-          </Row>
+          <div class="ScrollBox">
+            <DownloadCard />
+          </div>
 
           <Col className="navCol" lg={3}>
             <p id="howDoesItWork">

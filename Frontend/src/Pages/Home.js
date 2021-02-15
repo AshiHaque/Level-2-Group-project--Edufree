@@ -1,6 +1,10 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import students from "../images/STUDENT-IMM.png";
+import ecosystem from "../images/Ecosystem.PNG";
+import stats from "../images/stats.png";
 
 class Home extends React.Component {
   render() {
@@ -30,22 +34,84 @@ class Home extends React.Component {
               <p id="howDoesItWork">
                 <em>How does it work?</em>
               </p>
-              <button
+
+              <Button
+                href="#learn"
+                variant="primary"
                 size="lg"
-                type="button"
                 id="learnbutton"
-                class="btn btn-primary btn-lg"
               >
                 Learn
-              </button>
-              <button
+              </Button>
+
+              <Button
+                href="#teach"
+                variant="primary"
                 size="lg"
-                type="button"
                 id="teachbutton"
-                class="btn btn-primary btn-lg"
               >
                 Teach
-              </button>
+              </Button>
+            </div>
+          </div>
+        </Container>
+
+        <Container className="TeachContainer" fluid>
+          <section id="learn"> </section>
+          <div class="row">
+            <div class="col-6">
+              <img
+                src={ecosystem}
+                width="1000"
+                height="500"
+                id="ecosystem"
+                alt="ecosystem picture"
+              ></img>
+            </div>
+            <div class="col-6">
+              <h1 class="title" id="slogan">
+                {" "}
+                LEARN
+              </h1>
+              <p id="maininfo">
+                Take full advantage of our learning resources which have been
+                created by trusted educators and students here on our platform!
+                <p id="maininfo">
+                  Once you have mastered a subject, feel free to register as a
+                  educator to teach others.
+                </p>
+              </p>
+            </div>
+          </div>
+        </Container>
+
+        <Container className="TeachContainer" fluid>
+          <div class="row">
+            <div class="col-6">
+              <section id="teach">
+                <img
+                  src={stats}
+                  width="1000"
+                  height="500"
+                  id="ecosystem"
+                  alt="ecosystem picture"
+                ></img>
+              </section>
+            </div>
+            <div class="col-6">
+              <h1 class="title" id="slogan">
+                {" "}
+                TEACH
+              </h1>
+              <p id="maininfo">
+                Become a teacher on our platform, contribute to the resources
+                students have access to. Help improve the platform by adding
+                your quality resources.
+                <p id="maininfo">
+                  You are not limited to teaching! Feel free to get involved and
+                  learn too.
+                </p>
+              </p>
             </div>
           </div>
         </Container>

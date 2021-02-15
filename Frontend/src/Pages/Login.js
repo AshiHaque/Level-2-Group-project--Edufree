@@ -59,6 +59,7 @@ class Login extends React.Component {
         if (res.ok) {
           // if HTTP-status is 200-299
           // get the response body (the method explained below)
+          this.setState({ redirect: "/" });
           window.alert("You've successfully logged In!");
           console.log("User Logged In");
         } else {

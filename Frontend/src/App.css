@@ -14,11 +14,21 @@ h1 {
   font-size: 50px;
   font-weight: bolder;
 }
+.homeContainer {
+  margin-top: 120px;
+}
+.LearnContainer {
+  margin-top: 250px;
+}
+.TeachContainer {
+  margin-top: 250px;
+}
 #studentpic {
   margin-left: 1000 px;
 }
 #maininfo {
   padding-left: 50px;
+  padding-top: 50px;
   text-align: center;
   font-family: "Montserrat";
   font-size: 35px;
@@ -29,6 +39,10 @@ h1 {
   font-size: 30px;
   text-align: center;
   color: #0077c7;
+}
+
+#ecosystem {
+  padding-right: 50px;
 }
 
 .choice {
@@ -67,17 +81,17 @@ h3 {
 }
 
 #learnbutton {
+  position: absolute;
   margin-top: 20px;
-  margin-left: 300px;
+  margin-left: 350px;
 }
 #teachbutton {
+  position: absolute;
   margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 500px;
 }
-/*
-CONTENT PAGE
-*/
-.nav-link {
+
+CONTENT PAGE */ .nav-link {
   font-size: 1.2rem;
   font-family: "Montserrat";
   color: #0077c7;
@@ -247,6 +261,26 @@ CONTENT PAGE
 /* Screens */
 .col-6 img {
   width: 100%;
+}
+
+.circle {
+  border-radius: 1000px !important;
+  overflow: hidden;
+  width: 128px;
+  height: 128px;
+}
+
+.ScrollBox {
+  height: 500px;
+  width: 1200px;
+  border: 1px solid #ccc;
+  font: 16px/26px Georgia, Garamond, Serif;
+  overflow: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 800px) {
