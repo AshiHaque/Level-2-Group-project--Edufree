@@ -33,21 +33,13 @@ h1 {
 
 .choice {
   padding-top: 30px;
-  text-align: center;
-}
-
-.continueWith {
-  padding-top: 100px;
-  text-align: center;
 }
 
 #member {
   font-family: "Montserrat";
   font-weight: bolder;
   font-size: 20px;
-  padding-left: 0px;
-  padding-top: 100px;
-  text-align: center;
+  padding-top: 30px;
 }
 
 .nav-item {
@@ -187,15 +179,14 @@ CONTENT PAGE
   font-weight: bolder;
   font-size: 25px;
   font-family: "Montserrat";
-  text-align: center;
 }
 
 .btn-group-vertical {
   height: 250px;
   width: 600px;
   position: relative;
-  padding-left: 170px;
-  padding-top: 150px;
+  padding-top: 50px;
+  text-align: center;
 }
 
 #btnChoice {
@@ -210,13 +201,13 @@ CONTENT PAGE
   width: 600px;
   position: relative;
   padding-left: 170px;
-  padding-top: 100px;
+  padding-top: 150px;
   text-align: center;
 }
 #notMember {
   text-align: center;
-  padding-left: 150px;
-  padding-top: 25px;
+  padding-right: 35px;
+  padding-top: 150px;
 }
 
 .footer {
