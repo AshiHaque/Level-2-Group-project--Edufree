@@ -49,21 +49,10 @@ class Home extends React.Component {
           </div>
           </Container>
 
-          <Container className="TeachContainer" fluid>
+          <Container className="LearnContainer" fluid>
           <section id="learn"> </section>
           <div class="row">
-            <div class="col-6">
-    
-              <img
-                src={ecosystem}
-                width="1000"
-                height="500"
-                id="ecosystem"
-                alt="ecosystem picture"
-              ></img>
-              
-            </div>
-            <div class="col-6">
+          <div class="col-6">
               <h1 class="title" id="slogan">
                 {" "}
                 LEARN
@@ -78,6 +67,18 @@ class Home extends React.Component {
              
               </div>
               
+            <div class="col-6">
+    
+              <img
+                src={ecosystem}
+                width="1000"
+                height="500"
+                id="ecosystem"
+                alt="ecosystem picture"
+              ></img>
+              
+            </div>
+            
           </div>
          
         </Container>
