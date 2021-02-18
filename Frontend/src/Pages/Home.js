@@ -25,7 +25,7 @@ class Home extends React.Component {
             <div class="col-6">
               <h1 class="title" id="slogan">
                 {" "}
-                Made for Students,by Students
+                Made for Students, by Students
               </h1>
               <p id="maininfo">
                 A platform where anyone can learn for free, with endless
