@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import students from "../images/STUDENT-IMM.png";
 import ecosystem from "../images/Ecosystem.PNG";
-import stats from "../images/stats.png";
+import stats from "../images/stats.PNG";
 
 class Home extends React.Component {
   render() {
