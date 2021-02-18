@@ -6,34 +6,13 @@ import FacebookLogin from "react-facebook-login";
 import GitHubLogin from "react-github-login";
 
 class Registration extends React.Component {
-
-  responseGoogle = (response) => {
-    console.log(response);
-    console.log(response.profileObj);
-  };
-
   render() {
-
-    function onSignIn(googleUser) {
-      var id_token = googleUser.getAuthResponse().id_token;
-    }
-
-    const {OAuth2Client} = require('google-auth-library');
-    const client = new OAuth2Client("981603377227-2j90i9n7ag0c4ki2qdj68g190bu3k508.apps.googleusercontent.com");
-    async function verify() {
-      const ticket = await client.verifyIdToken({
-        idToken: "token",
-        audience: "981603377227-2j90i9n7ag0c4ki2qdj68g190bu3k508.apps.googleusercontent.com",
-      });
-    const payload = ticket.getPayload();
-    const userid = payload['sub'];
-    }
-    verify().catch(console.error);
-    
+    const responseGoogle = (response) => {
+      console.log(response);
+    };
 
     const responseFacebook = (response) => {
       console.log(response);
-      //console.log(response.profileObj);
     };
 
     const onSuccess = (response) => console.log(response);
@@ -47,7 +26,7 @@ class Registration extends React.Component {
               <h1 id="welcomeMessage"> Welcome!</h1>
               <h2 id="joinMessage">
                 Join our platform!
-                <br /> A place where students can
+                <br /> place where student can
                 <br />
                 help each other.
                 <br />
@@ -84,10 +63,10 @@ class Registration extends React.Component {
             >
               <button type="button" className="btn btn-outline-primary">
                 <GoogleLogin
-                  clientId="981603377227-2j90i9n7ag0c4ki2qdj68g190bu3k508.apps.googleusercontent.com"
+                  clientId="104419111985-q5kvvf8bh6pu6fb215864qsdni9mt07h.apps.googleusercontent.com"
                   buttonText="Login"
-                  onSuccess={this.responseGoogle}
-                  onFailure={this.responseGoogle}
+                  onSuccess={responseGoogle}
+                  onFailure={responseGoogle}
                   cookiePolicy={"single_host_origin"}
                 />
               </button>
