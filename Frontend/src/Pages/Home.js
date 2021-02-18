@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import students from "../images/STUDENT-IMM.png";
 import ecosystem from "../images/Ecosystem.PNG";
-import stats from "../images/stats.png";
+import stats from "../images/stats.PNG";
 
 class Home extends React.Component {
   render() {
@@ -25,7 +25,7 @@ class Home extends React.Component {
             <div class="col-6">
               <h1 class="title" id="slogan">
                 {" "}
-                Made for Students,by Students
+                Made for Students, by Students
               </h1>
               <p id="maininfo">
                 A platform where anyone can learn for free, with endless
