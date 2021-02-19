@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import ContentPage from "./Pages/ContentPage";
+import Aboutus from "./Pages/Aboutus";
 import ContentCSS from "./Pages/ContentCSS";
 import Home from "./Pages/Home";
 import Registration from "./Pages/Registration";
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Login" component={Login} />
           <Route path="/UserInfo" component={UserInfo} />
           <Route path="/ContentPage" component={ContentPage} />
+          <Route path="/Aboutus" component={Aboutus} />
           <Route path="/JavaBasics" component={JavaBasics} />
           <Route path="/JavaVariables" component={JavaVariables} />
           <Route path="/ContentJava" component={ContentJava} />
