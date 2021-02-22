@@ -9,13 +9,22 @@ import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Cookies from "js-cookie";
 
+
+
+
 function NavLoggedIn() {
   function handleClick(e) {
     e.preventDefault();
     <Redirect to="/Home" />;
     Cookies.remove("user");
     window.location.reload(false);
+
+
+
+    
   }
+
+  
 
   return (
     <div>
@@ -129,9 +138,11 @@ function NavGuest() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
+            <Nav.Link href="/Aboutus">About</Nav.Link>
               <Link to="/Login" class="nav-link">
                 Sign In
               </Link>
+             
             </Nav>
           </Navbar.Collapse>
         </Navbar>

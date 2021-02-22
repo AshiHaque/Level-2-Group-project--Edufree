@@ -16,17 +16,20 @@ import group4.EduFree.userdetails.EduFreeUserDetailsService;
 import group4.EduFree.userdetails.Favourite;
 import group4.EduFree.userdetails.User;
 import group4.EduFree.userdetails.UserDetailsRepository;
+import group4.EduFree.userdetails.newEmail;
+import group4.EduFree.userdetails.newPassword;
+import group4.EduFree.userdetails.newUsername;
 
 @RestController
 public class RegisterController {
-	
+
 	@Autowired
 	private UserDetailsRepository userDetailsRepository;
 	@Autowired
 	private EduFreeUserDetailsService userDetailsService;
-	
+
 	//whenever our web-site receives a request, this controller class will tell the service class what to do and will return the result.
-	
+
 
 	//Create
 	@CrossOrigin("http://localhost:3000")
@@ -40,25 +43,25 @@ public class RegisterController {
 	public List<User> sayHi() {
 		return userDetailsService.getAllUsers();
 	}
-	
+
 	//find one (Read)
 	@RequestMapping("/register/{id}")
 	public Optional<User> getUser(@PathVariable long id) {
 		return userDetailsService.getUser(id);
 	}
-	
+
 	//Update
 	@RequestMapping(method=RequestMethod.PUT, value="/register/{id}")
 	public void updateUser(@RequestBody User user, @PathVariable long id) {
 		userDetailsService.updateUser(id, user);
 	}
-	
+
 	//Delete
 	@RequestMapping(method=RequestMethod.DELETE, value="/register/{id}")
 	public void deleteUser(@PathVariable long id) {
 		userDetailsService.deleteUser(id);
 	}
-	
+
 	@RequestMapping(method=RequestMethod.POST, value="/favourites")
 	public void addFavourite(@RequestBody Favourite favourite) {
 		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
@@ -72,7 +75,7 @@ public class RegisterController {
 		existinguser.setFavourites(list);
 		userDetailsService.addUser(existinguser);
 	}
-	
+
 	@RequestMapping(method=RequestMethod.POST, value="/unfavourite")
 	public void removeFavourite(@RequestBody Favourite favourite) {
 		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
@@ -85,5 +88,43 @@ public class RegisterController {
 		existinguser.setFavourites(dalist);
 		userDetailsService.addUser(existinguser);
 	}
-	
+
+	//Create
+	@CrossOrigin("http://localhost:3000")
+	@RequestMapping(method=RequestMethod.POST, value="/register")
+	public ResponseEntity<?> changeUsername(@RequestBody newUsername newUsername) {
+		Optional<User> user = userDetailsRepository.findByUserName(newUsername.username);
+		User userDetails = user.get();
+		userDetails.setUserName(newUsername.newUsername);
+		userDetailsService.addUser(userDetails);
+
+		return ResponseEntity.ok("yes");
+
+	}
+	//Create
+	@CrossOrigin("http://localhost:3000")
+	@RequestMapping(method=RequestMethod.POST, value="/register")
+	public ResponseEntity<?> changePassword(@RequestBody newPassword newPassword) {
+		Optional<User> user = userDetailsRepository.findByUserName(newPassword.username);
+		User userDetails = user.get();
+		userDetails.setPassword(newPassword.newPassword);
+		userDetailsService.addUser(userDetails);
+
+		return ResponseEntity.ok("yes");
+
+	}
+
+	//Create
+		@CrossOrigin("http://localhost:3000")
+		@RequestMapping(method=RequestMethod.POST, value="/register")
+		public ResponseEntity<?> changeEmail(@RequestBody newEmail newEmail) {
+			Optional<User> user = userDetailsRepository.findByUserName(newEmail.username);
+			User userDetails = user.get();
+			userDetails.setEmail(newEmail.newEmail);
+			userDetailsService.addUser(userDetails);
+
+			return ResponseEntity.ok("yes");
+
+		}
+
 }

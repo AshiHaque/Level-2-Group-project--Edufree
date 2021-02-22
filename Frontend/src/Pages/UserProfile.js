@@ -5,7 +5,13 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
 class UserProfile extends React.Component {
+
+    
+
+
+
   render() {
+    
     return (
       <div className="container">
         <div className="row">
