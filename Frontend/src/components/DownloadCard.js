@@ -4,13 +4,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import Cookies from "js-cookie";
 
-function handleClick(e) {
-  e.preventDefault();
-  Cookies.get("user") === null || Cookies.get("user") === undefined
-    ? window.alert("You need to log in in order to save an item!")
-    : window.alert("The item is saved in your Dashboard! :)");
-}
-
 class DownloadCard extends React.Component {
   state = {
     file: "",
@@ -18,7 +11,30 @@ class DownloadCard extends React.Component {
     msg: "",
     fileName: "",
     url: "",
+    username: "",
   };
+
+  handleClick(contentName) {
+
+    const username = Cookies.get("user");
+    const cardid = contentName;
+    const data = {
+      username,
+      cardid
+    };
+
+    Cookies.get("user") === null || Cookies.get("user") === undefined
+      ? window.alert("You need to log in in order to save an item!")
+      :
+      console.log(data);
+      fetch("http://localhost:8080/favourites", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+  }
 
   handleChangeFileName = (event) => {
     this.setState({ fileName: event.target.value });
@@ -81,7 +97,7 @@ class DownloadCard extends React.Component {
             Download
           </Button>
           <input
-            onClick={handleClick}
+            onClick={this.handleClick.bind(this, content.name)}
             class="star"
             id="starContent"
             type="checkbox"

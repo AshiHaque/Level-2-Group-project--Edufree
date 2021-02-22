@@ -41,8 +41,8 @@ class Login extends React.Component {
         return res.json();
       })
       .then((jwt) => {
-        console.log(jwt);
-        Cookies.set("user", jwt);
+        console.log(jwt.jwt);
+        Cookies.set("user", jwt.jwt);
         //window.$userLoggedIn = jwt;
         console.log(Cookies.get("user"));
         window.location.reload(false);
