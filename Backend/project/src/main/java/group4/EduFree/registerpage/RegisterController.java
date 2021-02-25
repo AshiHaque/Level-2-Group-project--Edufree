@@ -6,11 +6,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import group4.EduFree.authenticate.AuthenticationResponse;
+import group4.EduFree.content.DownloadFileResponse;
+import group4.EduFree.content.FileEntityRepository;
 import group4.EduFree.userdetails.EduFreeUserDetails;
 import group4.EduFree.userdetails.EduFreeUserDetailsService;
 import group4.EduFree.userdetails.Favourite;
@@ -27,6 +30,8 @@ public class RegisterController {
 	private UserDetailsRepository userDetailsRepository;
 	@Autowired
 	private EduFreeUserDetailsService userDetailsService;
+	@Autowired
+	private FileEntityRepository fileEntityRepository;
 
 	//whenever our web-site receives a request, this controller class will tell the service class what to do and will return the result.
 
@@ -66,6 +71,20 @@ public class RegisterController {
 	public void addFavourite(@RequestBody Favourite favourite) {
 		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
 		User existinguser = user.get();
+		String list = existinguser.getFavourites();
+		if (list.equals("")) {
+			list = list + favourite.cardid;
+		}else {
+			list = list + "," + favourite.cardid;
+		}
+		existinguser.setFavourites(list);
+		userDetailsService.addUser(existinguser);
+	}
+
+	@RequestMapping(method=RequestMethod.POST, value="/unfavourite")
+	public void removeFavourite(@RequestBody Favourite favourite) {
+		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
+		User existinguser = user.get();
 		String[] str_array = existinguser.getFavourites().split(",");
 		List<String> list = new ArrayList<String>(Arrays.asList(str_array));
 		if(list.contains(favourite.cardid)) {
@@ -74,10 +93,9 @@ public class RegisterController {
 			String dalist = String.join(",", str_array);
 			existinguser.setFavourites(dalist);
 			userDetailsService.addUser(existinguser);
-		} else {
+		}else {
 			String strlist = existinguser.getFavourites();
-			if (strlist.equals("")||list.equals(null)) {
-				strlist = "";
+			if (strlist.equals(null)||strlist.equals("")) {
 				strlist = strlist + favourite.cardid;
 			}else {
 				strlist = strlist + "," + favourite.cardid;
@@ -85,8 +103,17 @@ public class RegisterController {
 			existinguser.setFavourites(strlist);
 			userDetailsService.addUser(existinguser);
 		}
+		
 	}
 	
+	@RequestMapping(method=RequestMethod.GET, value="/favourites")
+	public ResponseEntity<?> addFavourite(@RequestBody String username) {
+		Optional<User> opuser = userDetailsRepository.findByUserName(username);
+		User user = opuser.get();
+		String[] favourites = user.getFavourites().split(",");
+		return ResponseEntity.status(HttpStatus.OK).body(new DownloadFileResponse(fileEntityRepository.findByFavourites(favourites)));
+	}
+
 	//Create
 	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(method=RequestMethod.POST, value="/ammendusername")
@@ -107,6 +134,7 @@ public class RegisterController {
 		userDetailsService.addUser(userDetails);
 
 	}
+
 	//Create
 		@CrossOrigin("http://localhost:3000")
 		@RequestMapping(method=RequestMethod.POST, value="/ammendemail")
