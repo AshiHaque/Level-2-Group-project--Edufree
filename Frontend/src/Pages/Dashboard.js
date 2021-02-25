@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { Container, Row, Col, Nav, Button, Card } from "react-bootstrap";
 import InputGroup from "react-bootstrap/InputGroup";
 import ContentCard from "../components/ContentCard";
-import DownloadCard from "../components/DownloadCard";
+import FavouriteCard from "../components/FavouriteCard";
 
 class Dashboard extends React.Component {
   render() {
@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
           </Col>
 
           <div class="ScrollBox">
-            <DownloadCard />
+            <FavouriteCard />
           </div>
 
           <Col className="navCol" lg={3}>

@@ -61,10 +61,10 @@ class FavouriteCard extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/favourites")
+      .get("http://localhost:8080/getfavourites/" + Cookies.get("user"))
       .then((response) => response.data)
       .then((data) => {
-        this.setState({ contentCard: data.content });
+        this.setState({ contentCard: data });
       });
   }
 
@@ -75,27 +75,27 @@ class FavouriteCard extends React.Component {
   };
 
   render() {
-    return this.state.contentCard.map((content) => (
+    return this.state.contentCard.map((data) => (
       <Card style={{ textAlign: "left", marginTop: 10 }}>
         <Card.Header>
-          <h6>{content.name}</h6>
+          <h6>{data.name}</h6>
         </Card.Header>
         <Card.Body>
           <Card.Title>
             {" "}
-            <h5>{content.type}</h5>
+            <h5>{data.type}</h5>
           </Card.Title>
           <Card.Text>
             <p>{this.state.Info}</p>
           </Card.Text>
           <Button
-            onClick={this.downloadFile.bind(this, content.name)}
+            onClick={this.downloadFile.bind(this, data.name)}
             variant="primary"
           >
             Download
           </Button>
           <input
-            onClick={this.handleClick.bind(this, content.name)}
+            onClick={this.handleClick.bind(this, data.name)}
             class="star"
             id="starContent"
             type="checkbox"
