@@ -1,5 +1,6 @@
 package group4.EduFree;
 
+import group4.EduFree.forum.MessageRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -11,7 +12,7 @@ import group4.EduFree.userdetails.UserDetailsRepository;
 
 @SpringBootApplication
 @EnableConfigurationProperties({FileStorageProperties.class})
-@EnableJpaRepositories(basePackageClasses = {UserDetailsRepository.class, FileEntityRepository.class})
+@EnableJpaRepositories(basePackageClasses = {UserDetailsRepository.class, FileEntityRepository.class, MessageRepository.class})
 public class ProjectApplication {
 	
 	public static void main(String[] args) {

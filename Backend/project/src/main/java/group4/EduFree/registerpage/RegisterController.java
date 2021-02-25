@@ -76,7 +76,7 @@ public class RegisterController {
 			userDetailsService.addUser(existinguser);
 		} else {
 			String strlist = existinguser.getFavourites();
-			if (strlist.equals("")||list.equals(null)) {
+			if (strlist.equals("")||strlist.equals(null)) {
 				strlist = "";
 				strlist = strlist + favourite.cardid;
 			}else {

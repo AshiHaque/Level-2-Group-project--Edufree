@@ -177,7 +177,7 @@ class UserInfo extends React.Component {
                 className="btn btn-lg btn-primary btn-block"
                 type="submit"
               >
-                Creat your account!
+                Create your account!
               </button>
             </form>
           </div>
