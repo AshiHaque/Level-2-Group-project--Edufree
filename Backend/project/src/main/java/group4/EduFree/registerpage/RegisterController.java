@@ -66,29 +66,27 @@ public class RegisterController {
 	public void addFavourite(@RequestBody Favourite favourite) {
 		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
 		User existinguser = user.get();
-		String list = existinguser.getFavourites();
-		if (list.equals("")) {
-			list = list + favourite.cardid;
-		}else {
-			list = list + "," + favourite.cardid;
-		}
-		existinguser.setFavourites(list);
-		userDetailsService.addUser(existinguser);
-	}
-
-	@RequestMapping(method=RequestMethod.POST, value="/unfavourite")
-	public void removeFavourite(@RequestBody Favourite favourite) {
-		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
-		User existinguser = user.get();
 		String[] str_array = existinguser.getFavourites().split(",");
 		List<String> list = new ArrayList<String>(Arrays.asList(str_array));
-		list.remove(favourite.cardid);
-		str_array = list.toArray(new String[0]);
-		String dalist = String.join(",", str_array);
-		existinguser.setFavourites(dalist);
-		userDetailsService.addUser(existinguser);
+		if(list.contains(favourite.cardid)) {
+			list.remove(favourite.cardid);
+			str_array = list.toArray(new String[0]);
+			String dalist = String.join(",", str_array);
+			existinguser.setFavourites(dalist);
+			userDetailsService.addUser(existinguser);
+		} else {
+			String strlist = existinguser.getFavourites();
+			if (strlist.equals("")||list.equals(null)) {
+				strlist = "";
+				strlist = strlist + favourite.cardid;
+			}else {
+				strlist = strlist + "," + favourite.cardid;
+			}
+			existinguser.setFavourites(strlist);
+			userDetailsService.addUser(existinguser);
+		}
 	}
-
+	
 	//Create
 	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(method=RequestMethod.POST, value="/ammendusername")
@@ -109,7 +107,6 @@ public class RegisterController {
 		userDetailsService.addUser(userDetails);
 
 	}
-
 	//Create
 		@CrossOrigin("http://localhost:3000")
 		@RequestMapping(method=RequestMethod.POST, value="/ammendemail")
