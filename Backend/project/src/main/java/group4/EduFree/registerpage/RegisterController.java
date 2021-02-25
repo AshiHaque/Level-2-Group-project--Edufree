@@ -30,8 +30,8 @@ public class RegisterController {
 	private UserDetailsRepository userDetailsRepository;
 	@Autowired
 	private EduFreeUserDetailsService userDetailsService;
-	@Autowired
-	private FileEntityRepository fileEntityRepository;
+	//@Autowired
+	//private FileEntityRepository fileEntityRepository;
 
 	//whenever our web-site receives a request, this controller class will tell the service class what to do and will return the result.
 
@@ -87,25 +87,13 @@ public class RegisterController {
 		User existinguser = user.get();
 		String[] str_array = existinguser.getFavourites().split(",");
 		List<String> list = new ArrayList<String>(Arrays.asList(str_array));
-		if(list.contains(favourite.cardid)) {
-			list.remove(favourite.cardid);
-			str_array = list.toArray(new String[0]);
-			String dalist = String.join(",", str_array);
-			existinguser.setFavourites(dalist);
-			userDetailsService.addUser(existinguser);
-		}else {
-			String strlist = existinguser.getFavourites();
-			if (strlist.equals(null)||strlist.equals("")) {
-				strlist = strlist + favourite.cardid;
-			}else {
-				strlist = strlist + "," + favourite.cardid;
-			}
-			existinguser.setFavourites(strlist);
-			userDetailsService.addUser(existinguser);
-		}
-		
+		list.remove(favourite.cardid);
+		str_array = list.toArray(new String[0]);
+		String dalist = String.join(",", str_array);
+		existinguser.setFavourites(dalist);
+		userDetailsService.addUser(existinguser);
 	}
-	
+	/*
 	@RequestMapping(method=RequestMethod.GET, value="/favourites")
 	public ResponseEntity<?> addFavourite(@RequestBody String username) {
 		Optional<User> opuser = userDetailsRepository.findByUserName(username);
@@ -113,6 +101,7 @@ public class RegisterController {
 		String[] favourites = user.getFavourites().split(",");
 		return ResponseEntity.status(HttpStatus.OK).body(new DownloadFileResponse(fileEntityRepository.findByFavourites(favourites)));
 	}
+	*/
 
 	//Create
 	@CrossOrigin("http://localhost:3000")
