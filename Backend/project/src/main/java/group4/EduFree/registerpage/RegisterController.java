@@ -30,8 +30,8 @@ public class RegisterController {
 	private UserDetailsRepository userDetailsRepository;
 	@Autowired
 	private EduFreeUserDetailsService userDetailsService;
-	//@Autowired
-	//private FileEntityRepository fileEntityRepository;
+	@Autowired
+	private FileEntityRepository fileEntityRepository;
 
 	//whenever our web-site receives a request, this controller class will tell the service class what to do and will return the result.
 
@@ -66,43 +66,41 @@ public class RegisterController {
 	public void deleteUser(@PathVariable long id) {
 		userDetailsService.deleteUser(id);
 	}
-
+	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(method=RequestMethod.POST, value="/favourites")
 	public void addFavourite(@RequestBody Favourite favourite) {
 		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
 		User existinguser = user.get();
-		String list = existinguser.getFavourites();
-		if (list.equals("")) {
-			list = list + favourite.cardid;
-		}else {
-			list = list + "," + favourite.cardid;
-		}
-		existinguser.setFavourites(list);
-		userDetailsService.addUser(existinguser);
-	}
-
-	@RequestMapping(method=RequestMethod.POST, value="/unfavourite")
-	public void removeFavourite(@RequestBody Favourite favourite) {
-		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
-		User existinguser = user.get();
 		String[] str_array = existinguser.getFavourites().split(",");
 		List<String> list = new ArrayList<String>(Arrays.asList(str_array));
-		list.remove(favourite.cardid);
-		str_array = list.toArray(new String[0]);
-		String dalist = String.join(",", str_array);
-		existinguser.setFavourites(dalist);
-		userDetailsService.addUser(existinguser);
+		if(list.contains(favourite.cardid)) {
+			list.remove(favourite.cardid);
+			str_array = list.toArray(new String[0]);
+			String dalist = String.join(",", str_array);
+			existinguser.setFavourites(dalist);
+			userDetailsService.addUser(existinguser);
+		} else {
+			String strlist = existinguser.getFavourites();
+			if (strlist.equals("")||list.equals(null)) {
+				strlist = "";
+				strlist = strlist + favourite.cardid;
+			}else {
+				strlist = strlist + "," + favourite.cardid;
+			}
+			existinguser.setFavourites(strlist);
+			userDetailsService.addUser(existinguser);
+		}
 	}
-	/*
-	@RequestMapping(method=RequestMethod.GET, value="/favourites")
+	@CrossOrigin("http://localhost:3000")
+	@RequestMapping(method=RequestMethod.GET, value="/getfavourites")
 	public ResponseEntity<?> addFavourite(@RequestBody String username) {
 		Optional<User> opuser = userDetailsRepository.findByUserName(username);
 		User user = opuser.get();
 		String[] favourites = user.getFavourites().split(",");
-		return ResponseEntity.status(HttpStatus.OK).body(new DownloadFileResponse(fileEntityRepository.findByFavourites(favourites)));
+		
+		return ResponseEntity.status(HttpStatus.OK).body(new DownloadFileResponse(fileEntityRepository.findByName(favourites)));
 	}
-	*/
-
+	
 	//Create
 	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(method=RequestMethod.POST, value="/ammendusername")
@@ -123,7 +121,6 @@ public class RegisterController {
 		userDetailsService.addUser(userDetails);
 
 	}
-
 	//Create
 		@CrossOrigin("http://localhost:3000")
 		@RequestMapping(method=RequestMethod.POST, value="/ammendemail")

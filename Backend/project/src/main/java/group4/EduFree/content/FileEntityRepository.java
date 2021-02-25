@@ -7,6 +7,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 public interface FileEntityRepository extends JpaRepository<FileEntityDetails, Long> {
 
-	//List<FileEntityDetails> findByFavourites(String[] favourites);
+	List<FileEntityDetails> findByName(String[] favourites);
 }
 
