@@ -6,11 +6,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import group4.EduFree.authenticate.AuthenticationResponse;
+import group4.EduFree.content.DownloadFileResponse;
+import group4.EduFree.content.FileEntityRepository;
 import group4.EduFree.userdetails.EduFreeUserDetails;
 import group4.EduFree.userdetails.EduFreeUserDetailsService;
 import group4.EduFree.userdetails.Favourite;
@@ -27,6 +30,8 @@ public class RegisterController {
 	private UserDetailsRepository userDetailsRepository;
 	@Autowired
 	private EduFreeUserDetailsService userDetailsService;
+	@Autowired
+	private FileEntityRepository fileEntityRepository;
 
 	//whenever our web-site receives a request, this controller class will tell the service class what to do and will return the result.
 
@@ -61,7 +66,7 @@ public class RegisterController {
 	public void deleteUser(@PathVariable long id) {
 		userDetailsService.deleteUser(id);
 	}
-
+	@CrossOrigin("http://localhost:3000")
 	@RequestMapping(method=RequestMethod.POST, value="/favourites")
 	public void addFavourite(@RequestBody Favourite favourite) {
 		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
@@ -85,6 +90,15 @@ public class RegisterController {
 			existinguser.setFavourites(strlist);
 			userDetailsService.addUser(existinguser);
 		}
+	}
+	@CrossOrigin("http://localhost:3000")
+	@RequestMapping(method=RequestMethod.GET, value="/getfavourites")
+	public ResponseEntity<?> addFavourite(@RequestBody String username) {
+		Optional<User> opuser = userDetailsRepository.findByUserName(username);
+		User user = opuser.get();
+		String[] favourites = user.getFavourites().split(",");
+		
+		return ResponseEntity.status(HttpStatus.OK).body(new DownloadFileResponse(fileEntityRepository.findByName(favourites)));
 	}
 	
 	//Create
