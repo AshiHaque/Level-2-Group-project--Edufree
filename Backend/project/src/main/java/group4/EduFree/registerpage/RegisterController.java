@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import group4.EduFree.authenticate.AuthenticationResponse;
 import group4.EduFree.content.DownloadFileResponse;
+import group4.EduFree.content.FileEntityDetails;
 import group4.EduFree.content.FileEntityRepository;
 import group4.EduFree.userdetails.EduFreeUserDetails;
 import group4.EduFree.userdetails.EduFreeUserDetailsService;
@@ -92,13 +93,14 @@ public class RegisterController {
 		}
 	}
 	@CrossOrigin("http://localhost:3000")
-	@RequestMapping(method=RequestMethod.GET, value="/getfavourites")
-	public ResponseEntity<?> addFavourite(@RequestBody String username) {
+	@RequestMapping(method=RequestMethod.GET, value="/getfavourites/{username}")
+	public ResponseEntity<List<FileEntityDetails>> addFavourite(@PathVariable String username) {
+		System.out.println(username);
 		Optional<User> opuser = userDetailsRepository.findByUserName(username);
 		User user = opuser.get();
 		String[] favourites = user.getFavourites().split(",");
-		
-		return ResponseEntity.status(HttpStatus.OK).body(new DownloadFileResponse(fileEntityRepository.findByName(favourites)));
+		List<String> list = new ArrayList<String>(Arrays.asList(favourites));
+		return ResponseEntity.status(HttpStatus.OK).body(fileEntityRepository.findAllById(list));
 	}
 	
 	//Create

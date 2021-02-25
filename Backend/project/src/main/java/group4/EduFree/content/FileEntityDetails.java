@@ -12,8 +12,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @Entity
 public class FileEntityDetails {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 	private String name;
 	private String url;
 	private String type;
@@ -32,18 +30,11 @@ public class FileEntityDetails {
 	
 	public FileEntityDetails(Long id, String name, String url, String type) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.url = url;
 		this.type = type;
 	}
 	
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
 	public String getName() {
 		return name;
 	}
