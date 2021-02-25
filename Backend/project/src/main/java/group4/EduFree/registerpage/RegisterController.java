@@ -91,39 +91,33 @@ public class RegisterController {
 
 	//Create
 	@CrossOrigin("http://localhost:3000")
-	@RequestMapping(method=RequestMethod.POST, value="/register")
-	public ResponseEntity<?> changeUsername(@RequestBody newUsername newUsername) {
+	@RequestMapping(method=RequestMethod.POST, value="/ammendusername")
+	public void changeUsername(@RequestBody newUsername newUsername) {
 		Optional<User> user = userDetailsRepository.findByUserName(newUsername.username);
 		User userDetails = user.get();
 		userDetails.setUserName(newUsername.newUsername);
 		userDetailsService.addUser(userDetails);
 
-		return ResponseEntity.ok("yes");
-
 	}
 	//Create
 	@CrossOrigin("http://localhost:3000")
-	@RequestMapping(method=RequestMethod.POST, value="/register")
-	public ResponseEntity<?> changePassword(@RequestBody newPassword newPassword) {
+	@RequestMapping(method=RequestMethod.POST, value="/ammendpassword")
+	public void changePassword(@RequestBody newPassword newPassword) {
 		Optional<User> user = userDetailsRepository.findByUserName(newPassword.username);
 		User userDetails = user.get();
 		userDetails.setPassword(newPassword.newPassword);
 		userDetailsService.addUser(userDetails);
 
-		return ResponseEntity.ok("yes");
-
 	}
 
 	//Create
 		@CrossOrigin("http://localhost:3000")
-		@RequestMapping(method=RequestMethod.POST, value="/register")
-		public ResponseEntity<?> changeEmail(@RequestBody newEmail newEmail) {
+		@RequestMapping(method=RequestMethod.POST, value="/ammendemail")
+		public void changeEmail(@RequestBody newEmail newEmail) {
 			Optional<User> user = userDetailsRepository.findByUserName(newEmail.username);
 			User userDetails = user.get();
 			userDetails.setEmail(newEmail.newEmail);
 			userDetailsService.addUser(userDetails);
-
-			return ResponseEntity.ok("yes");
 
 		}
 
