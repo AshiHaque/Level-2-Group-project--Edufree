@@ -72,6 +72,9 @@ public class RegisterController {
 	public void addFavourite(@RequestBody Favourite favourite) {
 		Optional<User> user = userDetailsRepository.findByUserName(favourite.username);
 		User existinguser = user.get();
+		if(existinguser.getFavourites()==null) {
+			existinguser.setFavourites("");
+		}
 		String[] str_array = existinguser.getFavourites().split(",");
 		List<String> list = new ArrayList<String>(Arrays.asList(str_array));
 		if(list.contains(favourite.cardid)) {
@@ -82,7 +85,7 @@ public class RegisterController {
 			userDetailsService.addUser(existinguser);
 		} else {
 			String strlist = existinguser.getFavourites();
-			if (strlist.equals("")||strlist.equals(null)) {
+			if (strlist.equals("")) {
 				strlist = "";
 				strlist = strlist + favourite.cardid;
 			}else {
