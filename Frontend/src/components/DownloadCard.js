@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Cookies from "js-cookie";
 
 class DownloadCard extends React.Component {
@@ -15,25 +16,23 @@ class DownloadCard extends React.Component {
   };
 
   handleClick(contentName) {
-
     const username = Cookies.get("user");
     const cardid = contentName;
     const data = {
       username,
-      cardid
+      cardid,
     };
 
     Cookies.get("user") === null || Cookies.get("user") === undefined
       ? window.alert("You need to log in in order to save an item!")
-      :
-      console.log(data);
-      fetch("http://localhost:8080/favourites", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      : console.log(data);
+    fetch("http://localhost:8080/favourites", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
 
   handleChangeFileName = (event) => {
@@ -79,6 +78,11 @@ class DownloadCard extends React.Component {
   render() {
     return this.state.contentCard.map((content) => (
       <Card style={{ textAlign: "left", marginTop: 10 }}>
+        <NavDropdown title="Subject" id="basic-nav-dropdown">
+          <NavDropdown.Item>
+            <h6>{content.name}</h6>
+          </NavDropdown.Item>
+        </NavDropdown>
         <Card.Header>
           <h6>{content.name}</h6>
         </Card.Header>
