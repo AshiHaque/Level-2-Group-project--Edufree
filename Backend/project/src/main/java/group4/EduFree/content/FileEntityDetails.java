@@ -15,6 +15,8 @@ public class FileEntityDetails {
 	private String name;
 	private String url;
 	private String type;
+	private String Topic;
+	
 	public FileEntityDetails(MultipartFile file) {
 		this.name = StringUtils.cleanPath(file.getOriginalFilename());
 		this.url = ServletUriComponentsBuilder.fromCurrentContextPath()
@@ -28,11 +30,12 @@ public class FileEntityDetails {
 	public FileEntityDetails(){}
 
 	
-	public FileEntityDetails(Long id, String name, String url, String type) {
+	public FileEntityDetails(Long id, String name, String url, String type, String Topic) {
 		super();
 		this.name = name;
 		this.url = url;
 		this.type = type;
+		this.Topic = Topic;
 	}
 	
 	public String getName() {
@@ -52,6 +55,14 @@ public class FileEntityDetails {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getTopic() {
+		return Topic;
+	}
+
+	public void setTopic(String topic) {
+		Topic = topic;
 	}
 	
 }
