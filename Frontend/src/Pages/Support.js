@@ -28,6 +28,13 @@ class Support extends React.Component {
 
       <textarea placeholder="What's your message?"></textarea>
 
+      <button
+        type="submit"
+       
+      >
+        Submit
+      </button>
+
     
   
     </form>
