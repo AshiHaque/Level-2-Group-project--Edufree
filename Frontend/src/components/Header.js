@@ -90,7 +90,7 @@ function NavGuest() {
         <Navbar bg="light" expand="lg">
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-sm-2">
-              <NavDropdown title="Courses" id="basic-nav-dropdown">
+              <NavDropdown title="Subject" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/ContentPage">
                   Computer Science
                 </NavDropdown.Item>

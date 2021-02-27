@@ -3,11 +3,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MessagingService {
+public class ForumService {
     @Autowired
-    MessageRepository messageRepository;
+    ForumRepository forumRepository;
     //adds a user to the database
-    public void addMessage(message message) {
-        messageRepository.save(message);
+    public void addMessage(forum forum) {
+        forumRepository.save(forum);
     }
 }
