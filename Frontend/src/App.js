@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import "./css/Support.css";
+
 import ContentPage from "./Pages/ContentPage";
 import Aboutus from "./Pages/Aboutus";
 import ContentCSS from "./Pages/ContentCSS";
@@ -7,6 +9,7 @@ import Home from "./Pages/Home";
 import Registration from "./Pages/Registration";
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
+import Support from "./Pages/Support";
 import UserInfo from "./Pages/UserInfo";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -37,6 +40,7 @@ function App() {
           <Route path="/UserInfo" component={UserInfo} />
           <Route path="/ContentPage" component={ContentPage} />
           <Route path="/Aboutus" component={Aboutus} />
+          <Route path="/Support" component={Support} />
           <Route path="/JavaBasics" component={JavaBasics} />
           <Route path="/JavaVariables" component={JavaVariables} />
           <Route path="/ContentJava" component={ContentJava} />
