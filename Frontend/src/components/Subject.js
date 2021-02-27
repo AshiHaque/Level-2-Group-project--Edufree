@@ -32,13 +32,17 @@ class Subject extends React.Component {
   };
 
   render() {
-    return this.state.subjectName.map((data) => (
-      <NavDropdown title="Subject" id="basic-nav-dropdown">
-        <NavDropdown.Item>
-          <h6>{data.name}</h6>
-        </NavDropdown.Item>
-      </NavDropdown>
+    let a = this.state.subjectName.map((data) => (
+      <NavDropdown.Item>
+        {" "}
+        <h6>{data.name}</h6>{" "}
+      </NavDropdown.Item>
     ));
+    return (
+      <NavDropdown title="Subject" id="basic-nav-dropdown">
+        {a}
+      </NavDropdown>
+    );
   }
 }
 

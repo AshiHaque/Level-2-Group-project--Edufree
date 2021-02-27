@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Subject from "./Subject";
 import Cookies from "js-cookie";
 
 function NavLoggedIn() {
@@ -23,18 +24,7 @@ function NavLoggedIn() {
         <Navbar bg="light" expand="lg">
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-sm-2">
-              <NavDropdown title="Courses" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/ContentPage">
-                  Computer Science
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Languages
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Photography
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">....</NavDropdown.Item>
-              </NavDropdown>
+              <Subject />
             </Nav>
 
             <Form inline>
@@ -90,18 +80,7 @@ function NavGuest() {
         <Navbar bg="light" expand="lg">
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-sm-2">
-              <NavDropdown title="Subject" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/ContentPage">
-                  Computer Science
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Languages
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Photography
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.4">....</NavDropdown.Item>
-              </NavDropdown>
+              <Subject />
             </Nav>
 
             <Form inline>
