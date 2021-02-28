@@ -59,7 +59,7 @@ function NavLoggedIn() {
               </Link>
 
               <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
-              <Link to="/Forum" class="nav-link">
+              <Link to="/UserProfile" class="nav-link">
                 Profile
               </Link>
               <Link to="/" class="nav-link" onClick={handleClick}>
