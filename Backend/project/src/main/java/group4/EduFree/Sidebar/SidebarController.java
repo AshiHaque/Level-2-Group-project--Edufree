@@ -6,16 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
+
+import com.sun.el.stream.Optional;
 
 @Controller
 public class SidebarController {
 
+
 	@Autowired
 	private SubjectRepository subjectRepository;
-	@RequestMapping(method=RequestMethod.GET, value="/getsubjects")
-	public ResponseEntity <List<Subject>>  getSubjects() {
+	@CrossOrigin("http://localhost:3000")
+	@GetMapping("/getsubjects")
+	public ResponseEntity <?>  getSubjects() {
 		return ResponseEntity.status(HttpStatus.OK).body(subjectRepository.findAll());
 
 
@@ -23,8 +26,9 @@ public class SidebarController {
 
 	@Autowired
 	private CourseRepository courserepository;
-	@RequestMapping(method=RequestMethod.GET, value="/getcourses")
-	public ResponseEntity<List<Course>>  getCourses() {
+	@CrossOrigin("http://localhost:3000")
+	@GetMapping("/getcourses")
+	public ResponseEntity<?>  getCourses() {
 		return ResponseEntity.status(HttpStatus.OK).body(courserepository.findAll());
 
 
@@ -33,8 +37,9 @@ public class SidebarController {
 
 	@Autowired
 	private TopicRepository topicRepository;
-	@RequestMapping(method=RequestMethod.GET, value="/gettopics")
-	public ResponseEntity<List<Topic>>  getTopics() {
+	@CrossOrigin("http://localhost:3000")
+	@GetMapping("/gettopics")
+	public ResponseEntity<?>  getTopics() {
 		return ResponseEntity.status(HttpStatus.OK).body(topicRepository.findAll());
 
 	}
