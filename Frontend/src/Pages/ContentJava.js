@@ -4,7 +4,7 @@ import clipboard from "../images/clipboard.png";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav, Button, Card } from "react-bootstrap";
 import DownloadCard from "../components/DownloadCard";
-import SideBar from "../components/SideBar";
+import Topic from "../components/Topic";
 
 class ContentJava extends React.Component {
   render() {
@@ -12,12 +12,7 @@ class ContentJava extends React.Component {
       <div className="buttons">
         <Container className="buttonContainer" fluid>
           <Row>
-            <SideBar
-              Link_1="Getting Started"
-              Link_2="Java Basics"
-              Link_3="Variables"
-              Link_4="Operators"
-            />
+            <Topic></Topic>
 
             <Col lg={3}>
               <Button id="Resources" variant="primary" size="lg" block active>

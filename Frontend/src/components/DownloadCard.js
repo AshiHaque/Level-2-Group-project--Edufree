@@ -56,7 +56,7 @@ class DownloadCard extends React.Component {
   constructor(state) {
     super(state);
     this.state = {
-      contentCard: [],
+      downloadCard: [],
     };
   }
 
@@ -65,7 +65,7 @@ class DownloadCard extends React.Component {
       .get("http://localhost:8080/getContent")
       .then((response) => response.data)
       .then((data) => {
-        this.setState({ contentCard: data.content });
+        this.setState({ downloadCard: data.content });
       });
   }
 
@@ -76,13 +76,8 @@ class DownloadCard extends React.Component {
   };
 
   render() {
-    return this.state.contentCard.map((content) => (
+    return this.state.downloadCard.map((content) => (
       <Card style={{ textAlign: "left", marginTop: 10 }}>
-        <NavDropdown title="Subject" id="basic-nav-dropdown">
-          <NavDropdown.Item>
-            <h6>{content.name}</h6>
-          </NavDropdown.Item>
-        </NavDropdown>
         <Card.Header>
           <h6>{content.name}</h6>
         </Card.Header>

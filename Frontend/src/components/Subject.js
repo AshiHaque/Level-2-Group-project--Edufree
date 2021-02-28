@@ -33,7 +33,7 @@ class Subject extends React.Component {
 
   render() {
     let a = this.state.subjectName.map((data) => (
-      <NavDropdown.Item>
+      <NavDropdown.Item href="/ContentPage">
         {" "}
         <h6>{data.name}</h6>{" "}
       </NavDropdown.Item>

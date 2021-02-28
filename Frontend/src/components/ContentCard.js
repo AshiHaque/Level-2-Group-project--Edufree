@@ -3,17 +3,39 @@ import clipboard from "../images/clipboard.png";
 import { Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
+import Cookies from "js-cookie";
 
 class ContentCard extends React.Component {
+  handleChangeFileName = (event) => {
+    this.setState({ fileName: event.target.value });
+  };
+
+  constructor(state) {
+    super(state);
+    this.state = {
+      contentCard: [],
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get("http://localhost:8080/getcourses")
+      .then((response) => response.data)
+      .then((data) => {
+        this.setState({ contentCard: data });
+      });
+  }
+
   render() {
-    return (
+    return this.state.contentCard.map((data) => (
       <div class="m-4">
         <Card style={{ width: "18rem", borderRadius: 50 }}>
           <Card.Img variant="top" src={clipboard} />
           <Card.Body>
             <Card.Title>
               {" "}
-              <h3>{this.props.title}</h3>
+              <h3>{data.title}</h3>
               <p
                 style={{
                   background: "lightskyblue",
@@ -23,7 +45,7 @@ class ContentCard extends React.Component {
               ></p>
             </Card.Title>
             <Card.Text>
-              <p>{this.props.info}</p>
+              <p>{data.description}</p>
             </Card.Text>
             <Button
               style={{
@@ -47,7 +69,7 @@ class ContentCard extends React.Component {
           </Card.Body>
         </Card>
       </div>
-    );
+    ));
   }
 }
 
