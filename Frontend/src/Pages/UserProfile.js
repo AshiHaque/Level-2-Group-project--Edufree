@@ -1,9 +1,9 @@
 import React from "react";
 import img from "../images/photo.jpeg";
-
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Cookies from "js-cookie";
+import "../css/Userprofile.css";
 
 class UserProfile extends React.Component {
 
@@ -114,7 +114,7 @@ class UserProfile extends React.Component {
       
       <div className="container">
         <div className="row">
-          <div className="small-12 medium-2 large-2 columns">
+          <div className="imagee">
             <div className="circle">
               <img className="profile-pic" src={img}></img>
             </div>
@@ -128,7 +128,7 @@ class UserProfile extends React.Component {
 
         <div className="myForm">
         <form
-              className="form-signin"
+              className="form"
               id="formSignIn"
               onSubmit={this.handleSubmitUsername}
             >
@@ -147,7 +147,7 @@ class UserProfile extends React.Component {
               </button>
               </form>
               <form
-              className="form-signin"
+              className="form"
               id="formSignIn"
               onSubmit={this.handleSubmitEmail}
             >
@@ -166,7 +166,7 @@ class UserProfile extends React.Component {
               </button>
               </form>
               <form
-              className="form-signin"
+              className="form"
               id="formSignIn"
               onSubmit={this.handleSubmitPassword}
             >

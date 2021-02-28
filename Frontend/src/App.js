@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import "./css/Support.css";
+import "./css/Userprofile.css";
 
 import ContentPage from "./Pages/ContentPage";
 import Aboutus from "./Pages/Aboutus";
