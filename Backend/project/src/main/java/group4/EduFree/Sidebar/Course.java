@@ -7,7 +7,7 @@ import javax.persistence.Id;
 public class Course {
 	
 	@Id
-
+	private long ID;
 	private String Title;
 	private String Description;
 	private String ImageURI;
