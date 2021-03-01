@@ -63,10 +63,13 @@ class Login extends React.Component {
           window.alert("You've successfully logged In!");
           console.log("User Logged In");
         } else {
+          window.alert("Your credentials are wrong");
           console.log("Error");
+          console.log(Cookies.get("user"));
         }
       })
       .catch((error) => console.error("Error:", error));
+    console.log(Cookies.get("user"));
   };
 
   render() {

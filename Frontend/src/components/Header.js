@@ -117,7 +117,7 @@ class Header extends React.Component {
   render() {
     return Cookies.get("user") === null ||
       Cookies.get("user") === undefined ||
-      Cookies.get("user") === "" ? (
+      Cookies.get("user") === "undefined" ? (
       <NavGuest />
     ) : (
       <NavLoggedIn />

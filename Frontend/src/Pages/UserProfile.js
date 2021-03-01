@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../images/photo.jpeg";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import axios from "axios";
 import Cookies from "js-cookie";
 import "../css/Userprofile.css";
 import { Link, Redirect } from "react-router-dom";
@@ -103,6 +103,27 @@ class UserProfile extends React.Component {
       })
       .catch((error) => console.error("Error:", error));
   };
+
+  handleChangeFileName = (event) => {
+    this.setState({ fileName: event.target.value });
+  };
+
+  constructor(state) {
+    super(state);
+    this.state = {
+      userName: [],
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get("http://localhost:8080/register/" + Cookies.get("user"))
+      .then((response) => response.data)
+      .then((data) => {
+        this.setState({ userName: data });
+        console.log(data);
+      });
+  }
 
   render() {
     return (
