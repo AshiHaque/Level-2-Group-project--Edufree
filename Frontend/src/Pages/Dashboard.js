@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
     return (
       <div>
         <Container className="ContentContainer">
-          <Col className="navCol" lg={3}>
+          <Col>
             <p id="howDoesItWork">
               <em>Favourites</em>
             </p>
@@ -20,7 +20,7 @@ class Dashboard extends React.Component {
             <FavouriteCard />
           </div>
 
-          <Col className="navCol" lg={3}>
+          <Col>
             <p id="howDoesItWork">
               <em>You might like</em>
             </p>

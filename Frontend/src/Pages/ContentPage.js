@@ -9,54 +9,9 @@ class Content extends React.Component {
   render() {
     return (
       <div className="cards">
-        <Container className="ContentContainer">
-          <Row>
-            <Col lg={4}>
-              <ContentCard Link="/ContentJava" />
-            </Col>
-            <Col lg={4}>
-              <ContentCard
-                title="CSS"
-                info="All you need to get started with CSS!"
-                Link="/ContentCSS"
-              />
-            </Col>
-            <Col lg={4}>
-              <ContentCard
-                title="Python"
-                info="All you need to get started with coding in Python!
-                "
-                Link="/ContentJava"
-              />
-            </Col>
-          </Row>
-
-          <Row>
-            <Col lg={4}>
-              <ContentCard
-                title="Algorithms"
-                info="Text Here"
-                Link="/ContentJava"
-              />
-            </Col>
-            <Col lg={4}>
-              <ContentCard />
-            </Col>
-            <Col lg={4}>
-              <ContentCard />
-            </Col>
-          </Row>
-
-          <Row>
-            <Col lg={4}>
-              <ContentCard />
-            </Col>
-            <Col lg={4}>
-              <ContentCard />
-            </Col>
-            <Col lg={4}>
-              <ContentCard />
-            </Col>
+        <Container className="ContentPageContainer">
+          <Row className="ContentRow">
+            <ContentCard Link="/ContentJava" />
           </Row>
         </Container>
       </div>

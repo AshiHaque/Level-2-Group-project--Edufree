@@ -11,7 +11,7 @@ class ContentJava extends React.Component {
     return (
       <div className="buttons">
         <Container className="buttonContainer" fluid>
-          <Row>
+          <Row className="ContentCardRow">
             <Topic></Topic>
 
             <Col lg={3}>
@@ -27,15 +27,13 @@ class ContentJava extends React.Component {
           </Row>
         </Container>
 
-        <div className="cards">
-          <Container className="ContentContbainer">
-            <Row>
-              <Col lg={12}>
-                <DownloadCard />
-              </Col>
-            </Row>
-          </Container>
-        </div>
+        <Container className="ContentContainer">
+          <Row>
+            <Col lg={12}>
+              <DownloadCard />
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

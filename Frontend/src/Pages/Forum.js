@@ -1,15 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Cookies from "js-cookie";
 import { Container, Row, Col, Nav, Button, Card } from "react-bootstrap";
 import Message from "../components/Message";
 
+function handleClick(e) {
+  e.preventDefault();
+  window.location.reload(false);
+}
+
 class Forum extends React.Component {
   state = {
-    sender: "",
     message: "",
-  };
-  handleChangeSender = (event) => {
-    this.setState({ sender: event.target.value });
   };
 
   handleChangeMessage = (event) => {
@@ -17,7 +19,7 @@ class Forum extends React.Component {
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    const sender = this.state.sender;
+    const sender = Cookies.get("user");
     const message = this.state.message;
 
     const post = {
@@ -43,7 +45,7 @@ class Forum extends React.Component {
     return (
       <div>
         <Container className="ContentContainer">
-          <Col className="navCol" lg={3}>
+          <Col>
             <p id="howDoesItWork">
               <em>Forum</em>
             </p>
@@ -53,44 +55,25 @@ class Forum extends React.Component {
             <Message />
           </div>
 
-          <Col className="navCol" lg={3}>
+          <Col>
             <p id="howDoesItWork">
-              <em>Text here:</em>
+              <em>Type here:</em>
+              <form className="ForumMessage" onSubmit={this.handleSubmit}>
+                <textarea
+                  placeholder="What's your message?"
+                  onChange={this.handleChangeMessage}
+                ></textarea>
+
+                <button
+                  className="btn btn-lg btn-primary btn-block"
+                  type="submit"
+                >
+                  Send
+                </button>
+              </form>
+              <button onClick={handleClick}> Check for new post</button>
             </p>
           </Col>
-
-          <Row>
-            <Col lg={12}>
-              <div class="m-2">
-                <form
-                  className="form-signin"
-                  id="formSignIn"
-                  onSubmit={this.handleSubmit}
-                >
-                  <input
-                    type="text"
-                    id="sender"
-                    className="form-control"
-                    placeholder="Name"
-                    onChange={this.handleChangeSender}
-                  />
-                  <input
-                    type="text"
-                    id="inputmessage"
-                    className="form-control"
-                    placeholder="Type your message here"
-                    onChange={this.handleChangeMessage}
-                  />
-                  <button
-                    className="btn btn-lg btn-primary btn-block"
-                    type="submit"
-                  >
-                    Send
-                  </button>
-                </form>
-              </div>
-            </Col>
-          </Row>
         </Container>
       </div>
     );

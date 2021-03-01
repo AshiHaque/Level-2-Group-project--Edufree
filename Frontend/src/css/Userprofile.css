@@ -1,11 +1,10 @@
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .form > input {
+.form > input {
   padding: 30px;
   border-radius: 3px;
   margin-bottom: 5px;
@@ -19,28 +18,25 @@
 }
 
 .form > button {
-    padding: 5px;
-    border: none;
-    background-color: rgb(61, 105, 167);
-    font-weight: 500;
-    font-size: 20px;
-    border-radius: 3px;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    margin-top: 10px;}
+  padding: 5px;
+  border: none;
+  background-color: rgb(61, 105, 167);
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 3px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  margin-top: 10px;
+}
 
-.imagee{
-
+.imagee {
   background: rgba(252, 252, 252, 0.555);
   font-size: 16px;
   color: rgb(57, 57, 207);
   outline: none;
   display: block;
-  margin-left: 30%;
+  margin-left: 35%;
   margin-right: 60%;
   margin-top: 50px;
-
-
 }
-

@@ -47,7 +47,7 @@ function App() {
           <Route path="/ContentJava" component={ContentJava} />
           <Route path="/ContentCSS" component={ContentCSS} />
           <Route path="/JavaOperators" component={JavaOperators} />
-          <Route path="/Forum" component={Forum} />
+          <ProtectedRoute path="/Forum" component={Forum} />
           <ProtectedRoute path="/UserProfile" component={UserProfile} />
           <ProtectedRoute path="/UploadFile" component={UploadFile} />
           <ProtectedRoute path="/Dashboard" component={Dashboard} />
@@ -64,6 +64,7 @@ const ProtectedRoute = ({
   Dashboard,
   UploadFile,
   UserProfile,
+  Forum,
   path,
   ...rest
 }) => {
@@ -97,7 +98,7 @@ const ProtectedRoute = ({
         }}
       />
     ),
-    (
+    ((
       <Route
         path={path}
         {...rest}
@@ -110,7 +111,21 @@ const ProtectedRoute = ({
           );
         }}
       />
-    ))
+    ),
+    (
+      <Route
+        path={path}
+        {...rest}
+        render={(Forum) => {
+          return Cookies.get("user") === null ||
+            Cookies.get("user") === undefined ? (
+            (window.alert("Please Log In"), (<Redirect to="/Login" />))
+          ) : (
+            <Comp {...Forum} />
+          );
+        }}
+      />
+    )))
   );
 };
 

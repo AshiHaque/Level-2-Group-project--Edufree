@@ -17,6 +17,23 @@ h1 {
 .homeContainer {
   margin-top: 120px;
 }
+.UserProfileContainer {
+  position: relative;
+  text-align: center;
+  height: 70%;
+  width: 70%;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 70px;
+}
+
+.ProfileContainer {
+  position: relative;
+  text-align: center;
+  height: 80%;
+  width: 70%;
+  margin-left: 25%;
+}
 .LearnContainer {
   margin-top: 250px;
 }
@@ -100,12 +117,29 @@ CONTENT PAGE */ .nav-link {
 .buttonContainer {
   padding-top: 30px;
   background-color: #ffffff;
-  display: grid;
+  position: relative;
   text-align: center;
+  margin-bottom: 0px;
+}
+.ContentPageContainer {
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 80px;
 }
 .ContentContainer {
   background-color: rgb(255, 255, 255);
-  padding-bottom: 100px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10%;
+  margin-bottom: 70px;
+}
+.ContentCardRow {
+  height: 90px;
+}
+
+.ContentRow {
+  position: absolute;
 }
 
 .navCol {
@@ -225,11 +259,11 @@ CONTENT PAGE
 }
 
 .footer {
-  margin-top: 5%;
-  position: relative;
+  position: fixed;
+  overflow: hidden;
   left: 0;
   bottom: 0;
-  height: 100px;
+  height: 50px;
   width: 100%;
   background-color: #0077c7;
   color: white;
@@ -281,6 +315,13 @@ CONTENT PAGE
 img {
   max-width: 100%;
   height: auto;
+}
+.ProfilePicButton {
+  margin-left: 10px;
+  width: 170%;
+}
+.UserProfileForm {
+  margin-bottom: 25px;
 }
 
 @media screen and (max-width: 800px) {

@@ -5,19 +5,13 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Forum from "../Pages/Forum";
 import FormControl from "react-bootstrap/FormControl";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Subject from "./Subject";
 import Cookies from "js-cookie";
 
 function NavLoggedIn() {
-  function handleClick(e) {
-    e.preventDefault();
-    <Redirect to="/Home" />;
-    Cookies.remove("user");
-    window.location.reload(false);
-  }
-
   return (
     <div>
       <header>
@@ -57,13 +51,12 @@ function NavLoggedIn() {
                   Upload
                 </button>
               </Link>
-
+              <Link to="/Forum" class="nav-link">
+                Forum
+              </Link>
               <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
               <Link to="/UserProfile" class="nav-link">
                 Profile
-              </Link>
-              <Link to="/" class="nav-link" onClick={handleClick}>
-                Log Out
               </Link>
             </Nav>
           </Navbar.Collapse>
@@ -108,7 +101,7 @@ function NavGuest() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Nav.Link href="/Support">About</Nav.Link>
+              <Nav.Link href="/Support">Help</Nav.Link>
               <Link to="/Login" class="nav-link">
                 Sign In
               </Link>
