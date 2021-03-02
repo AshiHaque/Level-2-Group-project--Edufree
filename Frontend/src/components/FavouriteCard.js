@@ -32,6 +32,7 @@ class FavouriteCard extends React.Component {
         "Content-Type": "application/json",
       },
     });
+    window.location.reload(false);
   }
 
   handleChangeFileName = (event) => {
