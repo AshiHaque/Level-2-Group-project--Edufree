@@ -15,6 +15,7 @@ public class FileEntityDetails {
 	private String name;
 	private String url;
 	private String type;
+	private String Course;
 	private String Topic;
 	
 	public FileEntityDetails(MultipartFile file) {
@@ -30,12 +31,13 @@ public class FileEntityDetails {
 	public FileEntityDetails(){}
 
 	
-	public FileEntityDetails(Long id, String name, String url, String type, String Topic) {
+	public FileEntityDetails(Long id, String name, String url, String type, String Course, String Topic) {
 		super();
 		this.name = name;
 		this.url = url;
 		this.type = type;
 		this.Topic = Topic;
+		this.Course = Course;
 	}
 	
 	public String getName() {
@@ -63,6 +65,14 @@ public class FileEntityDetails {
 
 	public void setTopic(String topic) {
 		Topic = topic;
+	}
+
+	public String getCourse() {
+		return Course;
+	}
+
+	public void setCourse(String course) {
+		Course = course;
 	}
 	
 }
