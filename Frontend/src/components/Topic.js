@@ -9,6 +9,7 @@ class Topic extends React.Component {
   handleClick(e) {
     Cookies.set("topic", e);
     console.log(Cookies.get("topic"));
+    window.location.reload(false);
   }
 
   handleChangeFileName = (event) => {

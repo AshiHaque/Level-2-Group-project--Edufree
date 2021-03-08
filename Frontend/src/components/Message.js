@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 class Message extends React.Component {
   constructor(state) {
@@ -13,7 +14,7 @@ class Message extends React.Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/getMessage")
+      .get("http://localhost:8080/getMessageTopic/" + Cookies.get("topic"))
       .then((response) => response.data)
       .then((data) => {
         this.setState({ contentMessage: data });

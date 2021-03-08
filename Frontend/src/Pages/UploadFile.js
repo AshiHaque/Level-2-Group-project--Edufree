@@ -64,6 +64,10 @@ class Content extends React.Component {
       body: data,
     })
       .then((response) => {
+        fetch("http://localhost:8080/uploadFileInfo", {
+          method: "POST",
+          body: data,
+        });
         this.setState({ error: "", msg: "Sucessfully uploaded file" });
       })
       .catch((err) => {
