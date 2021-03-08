@@ -133,6 +133,10 @@ CONTENT PAGE */ .nav-link {
   position: relative;
   padding-bottom: 10%;
   margin-bottom: 70px;
+  height: 10%;
+}
+.ForumTopics {
+  margin-left: 20px;
 }
 .ContentCardRow {
   height: 90px;

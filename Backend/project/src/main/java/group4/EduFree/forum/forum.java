@@ -12,6 +12,15 @@ public class forum {
     private Long id;
     private String sender;
     private String message;
+    private String topicName;
+
+    public String getTopicName() {
+        return topicName;
+    }
+
+    public void setTopicName(String topicName) {
+        this.topicName = topicName;
+    }
 
     public Long getId() {
         return id;

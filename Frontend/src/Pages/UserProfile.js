@@ -8,7 +8,6 @@ import { Link, Redirect } from "react-router-dom";
 
 function handleClick(e) {
   e.preventDefault();
-  <Redirect to="/" />;
   Cookies.remove("user");
   window.location.reload(false);
 }

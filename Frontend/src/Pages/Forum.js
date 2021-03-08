@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import Cookies from "js-cookie";
 import { Container, Row, Col, Nav, Button, Card } from "react-bootstrap";
 import Message from "../components/Message";
+import Subject from "../components/Subject";
+import Topic from "../components/Topic";
 
 function handleClick(e) {
   e.preventDefault();
@@ -21,10 +23,12 @@ class Forum extends React.Component {
     event.preventDefault();
     const sender = Cookies.get("user");
     const message = this.state.message;
+    const topicName = Cookies.get("topic");
 
     const post = {
       sender,
       message,
+      topicName,
     };
 
     fetch("http://localhost:8080/message/", {
@@ -44,37 +48,42 @@ class Forum extends React.Component {
   render() {
     return (
       <div>
-        <Container className="ContentContainer">
-          <Col>
-            <p id="howDoesItWork">
-              <em>Forum</em>
-            </p>
-          </Col>
-
-          <div class="ScrollBox">
-            <Message />
+        <Row>
+          <div className="ForumTopics">
+            <Topic />
           </div>
+          <Container className="ContentContainer">
+            <Col>
+              <p id="howDoesItWork">
+                <em>Forum</em>
+              </p>
+            </Col>
 
-          <Col>
-            <p id="howDoesItWork">
-              <em>Type here:</em>
-              <form className="ForumMessage" onSubmit={this.handleSubmit}>
-                <textarea
-                  placeholder="What's your message?"
-                  onChange={this.handleChangeMessage}
-                ></textarea>
+            <div class="ScrollBox">
+              <Message />
+            </div>
 
-                <button
-                  className="btn btn-lg btn-primary btn-block"
-                  type="submit"
-                >
-                  Send
-                </button>
-              </form>
-              <button onClick={handleClick}> Check for new post</button>
-            </p>
-          </Col>
-        </Container>
+            <Col>
+              <p id="howDoesItWork">
+                <em>Type here:</em>
+                <form className="ForumMessage" onSubmit={this.handleSubmit}>
+                  <textarea
+                    placeholder="What's your message?"
+                    onChange={this.handleChangeMessage}
+                  ></textarea>
+
+                  <button
+                    className="btn btn-lg btn-primary btn-block"
+                    type="submit"
+                  >
+                    Send
+                  </button>
+                </form>
+                <button onClick={handleClick}> Check for new post</button>
+              </p>
+            </Col>
+          </Container>
+        </Row>
       </div>
     );
   }
