@@ -1,7 +1,8 @@
 package group4.EduFree;
 
-import group4.EduFree.Sidebar.SubjectRepository;
 import group4.EduFree.forum.ForumRepository;
+import group4.EduFree.sidebar.SubjectRepository;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
