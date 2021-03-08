@@ -59,20 +59,6 @@ class Content extends React.Component {
       description,
     };
 
-    fetch("http://localhost:8080/file_entity_details", {
-      method: "POST",
-      body: JSON.stringify(fileInfo),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((res) => {
-        window.alert("Your account is created!");
-        this.setState({ redirect: "/" });
-        console.log("User Registered");
-      })
-      .catch((error) => console.error("Error:", error));
-
     fetch("http://localhost:8080/uploadFile", {
       method: "POST",
       body: data,
