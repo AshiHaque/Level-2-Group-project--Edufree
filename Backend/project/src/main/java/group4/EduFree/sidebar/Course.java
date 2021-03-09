@@ -1,4 +1,4 @@
-package group4.EduFree.Sidebar;
+package group4.EduFree.sidebar;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

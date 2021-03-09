@@ -12,9 +12,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @Entity
 public class FileEntityDetails {
 	@Id
+	private Long id;
+	private String title;
 	private String name;
 	private String url;
 	private String type;
+	private String Course;
 	private String Topic;
 	
 	public FileEntityDetails(MultipartFile file) {
@@ -30,14 +33,27 @@ public class FileEntityDetails {
 	public FileEntityDetails(){}
 
 	
-	public FileEntityDetails(Long id, String name, String url, String type, String Topic) {
+	public FileEntityDetails(Long id, String name, String url, String type, String Course, String Topic) {
 		super();
 		this.name = name;
 		this.url = url;
 		this.type = type;
 		this.Topic = Topic;
+		this.Course = Course;
 	}
-	
+
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getName() {
 		return name;
 	}
@@ -63,6 +79,14 @@ public class FileEntityDetails {
 
 	public void setTopic(String topic) {
 		Topic = topic;
+	}
+
+	public String getCourse() {
+		return Course;
+	}
+
+	public void setCourse(String course) {
+		Course = course;
 	}
 	
 }

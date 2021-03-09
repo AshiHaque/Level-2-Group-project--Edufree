@@ -1,4 +1,4 @@
-package group4.EduFree.Sidebar;
+package group4.EduFree.sidebar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

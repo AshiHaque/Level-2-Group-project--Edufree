@@ -3,8 +3,15 @@ import { Button, Card } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import { Col, Nav } from "react-bootstrap";
+import Cookies from "js-cookie";
 
 class Topic extends React.Component {
+  handleClick(e) {
+    Cookies.set("topic", e);
+    console.log(Cookies.get("topic"));
+    window.location.reload(false);
+  }
+
   handleChangeFileName = (event) => {
     this.setState({ fileName: event.target.value });
   };
@@ -28,7 +35,7 @@ class Topic extends React.Component {
 
   render() {
     let a = this.state.topicName.map((data) => (
-      <Nav.Link href="/ContentJava">
+      <Nav.Link onClick={this.handleClick.bind(this, data.name)}>
         <h6>{data.name}</h6>
       </Nav.Link>
     ));

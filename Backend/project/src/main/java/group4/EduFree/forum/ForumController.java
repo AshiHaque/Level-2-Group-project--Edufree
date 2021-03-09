@@ -22,4 +22,9 @@ public class ForumController {
     public ResponseEntity<?> getAllMessages() {
         return ResponseEntity.status(HttpStatus.OK).body(forumRepository.findAll());
     }
+    @CrossOrigin("http://localhost:3000")
+    @GetMapping("/getMessageTopic/{topicName}")
+    public ResponseEntity<?> getMessageTopic( @PathVariable String topicName) {
+        return ResponseEntity.status(HttpStatus.OK).body(forumRepository.fetchAllMessagesTopic(topicName));
+    }
 }

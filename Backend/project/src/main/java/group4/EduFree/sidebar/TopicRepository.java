@@ -1,4 +1,4 @@
-package group4.EduFree.Sidebar;
+package group4.EduFree.sidebar;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

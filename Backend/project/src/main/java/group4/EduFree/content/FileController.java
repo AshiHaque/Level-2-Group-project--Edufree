@@ -52,14 +52,14 @@ public class FileController {
 		return ResponseEntity.status(HttpStatus.OK).body( new UploadFileResponse(fileName, fileDownloadUri,
 				file.getContentType(), file.getSize()));
 	}
-	//If we want to upload more files..
-	/*@PostMapping("/uploadMultipleFiles")
-	public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
-		return Arrays.asList(files)
-				.stream()
-				.map(file -> uploadFile(file))
-				.collect(Collectors.toList());
+
+	/*@CrossOrigin("http://localhost:3000")
+	@PostMapping("/uploadFileInfo")
+	public ResponseEntity<UploadFileResponse> uploadFileInfo(){
+
 	}*/
+
+
 	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/downloadFile/{fileName:.+}")
 	public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) {
@@ -85,8 +85,8 @@ public class FileController {
 				.body(resource);
 	}
 	@CrossOrigin("http://localhost:3000")
-	@GetMapping("/getContent")
-	public ResponseEntity<DownloadFileResponse> getAll() {
-		return ResponseEntity.status(HttpStatus.OK).body(new DownloadFileResponse(fileEntityRepository.findAll()));
+	@GetMapping("/getContent/{course}/{topic}")
+	public ResponseEntity<DownloadFileResponse> getAll(@PathVariable String course, @PathVariable String topic) {
+		return ResponseEntity.status(HttpStatus.OK).body(new DownloadFileResponse(fileEntityRepository.findByCourseAndTopic(course, topic)));
 	}
 }

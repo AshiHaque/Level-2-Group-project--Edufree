@@ -203,6 +203,7 @@ class Header extends React.Component {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
+            <Nav.Link href="/Aboutus">About</Nav.Link>
               <Nav.Link href="/Support">Help</Nav.Link>
               <Link to="/Login" class="nav-link">
                 Sign In

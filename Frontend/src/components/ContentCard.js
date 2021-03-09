@@ -7,6 +7,11 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 class ContentCard extends React.Component {
+  handleClick(e) {
+    Cookies.set("course", e);
+    console.log(Cookies.get("course"));
+  }
+
   handleChangeFileName = (event) => {
     this.setState({ fileName: event.target.value });
   };
@@ -55,10 +60,10 @@ class ContentCard extends React.Component {
                 paddingBottom: 50,
                 marginBottom: 20,
               }}
+              onClick={this.handleClick.bind(this, data.title)}
+              href="/ContentJava"
             >
-              <Link to={this.props.Link} class="nav-link">
-                LEARN
-              </Link>
+              LEARN
             </Button>
             <Card
               class="shadow-lg p-4 mb-4 bg-white"
