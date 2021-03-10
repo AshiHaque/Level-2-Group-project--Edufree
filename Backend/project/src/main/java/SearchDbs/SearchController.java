@@ -16,20 +16,20 @@ import group4.EduFree.userdetails.User;
 @CrossOrigin("http://localhost:3000")
 @RequestMapping()
 public class SearchController {
-  @Autowired
-  CourseRepository courseRepository;
-	//find all (Read)
-		@RequestMapping(method=RequestMethod.POST, value="/searchDbs")
-		public List<User> sayHi(@RequestBody String search) {
-			return courseRepository.findByName(search);
-		}
+//  @Autowired
+//  CourseRepository courseRepository;
+//	//find all (Read)
+//		@RequestMapping(method=RequestMethod.POST, value="/searchDbs")
+//		public List<User> sayHi(@RequestBody String search) {
+//			return courseRepository.findByName(search);
+//		}
 
 	
-	//@Query("select * from user")
-	public void test(@RequestBody String user) {
-		System.out.println("user"+user);
-	
-		
-	}
+//	//@Query("select * from user")
+//	public void test(@RequestBody String user) {
+//		System.out.println("user"+user);
+//	
+//		
+//	}
 }
 

@@ -16,27 +16,25 @@ public class SidebarController {
 
 	@Autowired
 	private SubjectRepository subjectRepository;
+	@Autowired
+	private CourseRepository courserepository;
+	@Autowired
+	private TopicRepository topicRepository;
+	
 	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/getsubjects")
 	public ResponseEntity <?>  getSubjects() {
 		return ResponseEntity.status(HttpStatus.OK).body(subjectRepository.findAll());
 
-
 	}
 
-	@Autowired
-	private CourseRepository courserepository;
 	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/getcourses")
 	public ResponseEntity<?>  getCourses() {
 		return ResponseEntity.status(HttpStatus.OK).body(courserepository.findAll());
 
-
-
 	}
 
-	@Autowired
-	private TopicRepository topicRepository;
 	@CrossOrigin("http://localhost:3000")
 	@GetMapping("/gettopics")
 	public ResponseEntity<?>  getTopics() {

@@ -10,7 +10,7 @@ import group4.EduFree.userdetails.User;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
 
-	List<User> findByName(String search);
+	//List<User> findByName(String search);
 
 
 }
