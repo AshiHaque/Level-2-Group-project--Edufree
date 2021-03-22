@@ -12,5 +12,5 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 
 	//List<User> findByName(String search);
 
-
+ 
 }

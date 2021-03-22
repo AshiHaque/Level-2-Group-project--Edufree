@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import group4.EduFree.Sidebar.CourseRepository;
+//import group4.EduFree.Sidebar.CourseRepository;
 import group4.EduFree.userdetails.User;
 
 @CrossOrigin("http://localhost:3000")
