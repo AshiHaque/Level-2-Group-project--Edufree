@@ -12,9 +12,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @Entity
 public class FileEntityDetails {
 	@Id
-	private Long id;
-	private String title;
 	private String name;
+	//private Long id;
+	//private String title;
 	private String url;
 	private String type;
 	private String Course;
@@ -42,18 +42,18 @@ public class FileEntityDetails {
 		this.Course = Course;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+	//public String getTitle() {
+	//	return title;
+	//}
+	//public void setTitle(String title) {
+	//	this.title = title;
+	//}
+	//public Long getId() {
+	//	return id;
+	//}
+	//public void setId(Long id) {
+	//	this.id = id;
+	//}
 	public String getName() {
 		return name;
 	}
