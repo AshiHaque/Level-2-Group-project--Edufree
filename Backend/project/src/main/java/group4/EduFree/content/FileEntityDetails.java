@@ -11,14 +11,18 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 @Entity
 public class FileEntityDetails {
+
 	@Id
+
 	private String name;
-	//private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
 	//private String title;
 	private String url;
 	private String type;
-	private String Course;
-	private String Topic;
+	//private String Course;
+	//private String Topic;
 	
 	public FileEntityDetails(MultipartFile file) {
 		this.name = StringUtils.cleanPath(file.getOriginalFilename());
@@ -38,8 +42,6 @@ public class FileEntityDetails {
 		this.name = name;
 		this.url = url;
 		this.type = type;
-		this.Topic = Topic;
-		this.Course = Course;
 	}
 
 	//public String getTitle() {
@@ -54,6 +56,14 @@ public class FileEntityDetails {
 	//public void setId(Long id) {
 	//	this.id = id;
 	//}
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -73,20 +83,5 @@ public class FileEntityDetails {
 		this.type = type;
 	}
 
-	public String getTopic() {
-		return Topic;
-	}
 
-	public void setTopic(String topic) {
-		Topic = topic;
-	}
-
-	public String getCourse() {
-		return Course;
-	}
-
-	public void setCourse(String course) {
-		Course = course;
-	}
-	
 }

@@ -44,11 +44,6 @@ class Content extends React.Component {
       return;
     }
 
-    if (this.state.file.size >= 2000000) {
-      this.setState({ error: "File size exceeds limit of 2MB." });
-      return;
-    }
-
     let data = new FormData();
     data.append("file", this.state.file);
     data.append("name", this.state.file.name);

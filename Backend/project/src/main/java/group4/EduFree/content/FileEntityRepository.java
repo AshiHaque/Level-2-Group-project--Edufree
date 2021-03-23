@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface FileEntityRepository extends JpaRepository<FileEntityDetails, String> {
 
-	@Query("select u from FileEntityDetails u where u.Course = :course and u.Topic = :topic")
-	List<FileEntityDetails> findByCourseAndTopic(String course, String topic);
+	//@Query("select u from FileEntityDetails u where u.Course = :course and u.Topic = :topic")
+	//List<FileEntityDetails> findByCourseAndTopic(String course, String topic);
 
 }
