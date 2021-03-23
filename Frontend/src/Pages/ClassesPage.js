@@ -3,11 +3,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import clipboard from "../images/clipboard.png";
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Nav, Button, Card } from "react-bootstrap";
-import DownloadCard from "../components/DownloadCard";
+import Class from "../components/Class";
 import Topic from "../components/Topic";
-import ClassesPage from "../Pages/ClassesPage";
 
-class ContentJava extends React.Component {
+class ClassesPage extends React.Component {
   render() {
     return (
       <div className="buttons">
@@ -16,16 +15,22 @@ class ContentJava extends React.Component {
             <Topic></Topic>
 
             <Col lg={3}>
-              <Button id="Resources" variant="primary" size="lg" block active>
-                Resources
-              </Button>
-            </Col>
-            <Col lg={3}>
-              <Link to="/ClassesPage">
-                <Button id="Classes" variant="secondary" size="lg" block active>
-                  Classes
+              <Link to="/ContentJava">
+                <Button
+                  id="Resources"
+                  variant="secondary"
+                  size="lg"
+                  block
+                  active
+                >
+                  Resources
                 </Button>
               </Link>
+            </Col>
+            <Col lg={3}>
+              <Button id="Classes" variant="primary" size="lg" block active>
+                Classes
+              </Button>
             </Col>
           </Row>
         </Container>
@@ -33,7 +38,7 @@ class ContentJava extends React.Component {
         <Container className="ContentContainer">
           <Row>
             <Col lg={12}>
-              <DownloadCard />
+              <Class />
             </Col>
           </Row>
         </Container>
@@ -42,4 +47,4 @@ class ContentJava extends React.Component {
   }
 }
 
-export default ContentJava;
+export default ClassesPage;

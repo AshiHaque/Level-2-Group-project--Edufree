@@ -21,6 +21,7 @@ import JavaVariables from "./Pages/JavaVariables";
 import JavaOperators from "./Pages/JavaOperators";
 import UserProfile from "./Pages/UserProfile";
 import Forum from "./Pages/Forum";
+import ClassesPage from "./Pages/ClassesPage";
 import {
   BrowserRouter as Router,
   Route,
@@ -47,6 +48,7 @@ function App() {
           <Route path="/ContentJava" component={ContentJava} />
           <Route path="/ContentCSS" component={ContentCSS} />
           <Route path="/JavaOperators" component={JavaOperators} />
+          <Route path="/ClassesPage" component={ClassesPage} />
           <ProtectedRoute path="/Forum" component={Forum} />
           <ProtectedRoute path="/UserProfile" component={UserProfile} />
           <ProtectedRoute path="/UploadFile" component={UploadFile} />
