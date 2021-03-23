@@ -24,11 +24,24 @@ class Aboutus extends React.Component {
                
               ></img>
          </div>
+         <div className="col-6">
         <p className= "p2">
             EduFree is a Web Application that was created to provide free educational 
             resources for those who are passionate about learning.
+
 </p>
+<p className= "p2">
+            Within this website, we have created the opportunity for anyone to learn from various 
+            subjects.
+           
+</p>
+<p className= "p2">
+            All for free!
+            
+</p>
+
 </div> 
+</div>
 </div>
         </div>)}}
     export default Aboutus;
